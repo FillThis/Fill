@@ -64,7 +64,7 @@ function Page() {
                         </p>
                     </div>
                     <div className="mt-[1rem] flex flex-col gap-[.6rem]">
-                        <button className="flex justify-center items-center rounded-[.3rem] bg-gradient-to-r from-[#F4546D] via-[#D750A6] via-[#AC4EF4] to-[#5A87FD]  h-[2.4rem] w-full text-white font-semibold">
+                        <button className="flex justify-center items-center rounded-[.3rem] bg-gradient-to-r from-[#F4546D] via-[#D750A6] to-[#5A87FD]  h-[2.4rem] w-full text-white font-semibold">
                             Log in
                         </button>
                         <p className="text-center text-[#E6E6E6] text-[.9rem]">
