@@ -17,7 +17,7 @@ function Navbar() {
     return (
         <nav
             className={cn(
-                "flex w-full h-12 items-center px-8 py-4 text-white bg-primary-dark",
+                "flex w-full h-16 items-center px-8 py-4 text-white bg-primary-dark",
             )}
         >
             <MainNavBar />

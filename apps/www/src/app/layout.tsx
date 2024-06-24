@@ -18,7 +18,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={cn("h-full w-full", inter.className)}>
+            <body
+                className={cn(
+                    "underline-offset-4 h-full w-full",
+                    inter.className,
+                )}
+            >
                 <AuthProvider>
                     <JotaiProvider>{children}</JotaiProvider>
                 </AuthProvider>

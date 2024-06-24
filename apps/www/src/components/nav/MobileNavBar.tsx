@@ -7,6 +7,8 @@ import { Button } from "../ui/button";
 import { mobileNavItems } from "./mobileNavItems";
 import { useRouter } from "next/navigation";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { Icons } from "../icons/icons";
+import Link from "next/link";
 
 const MobileNavBar = () => {
     const [open, setOpen] = React.useState<boolean>(false);
@@ -18,6 +20,7 @@ const MobileNavBar = () => {
             <SheetTrigger asChild>
                 <Button
                     size="icon"
+                    variant={"link"}
                     className="md:hidden text-white"
                     onClick={() => setOpen((prev) => !prev)}
                 >
@@ -26,17 +29,18 @@ const MobileNavBar = () => {
             </SheetTrigger>
 
             <SheetContent side="left">
-                <div className="flex flex-col items-start">
+                <div className="flex gap-y-4 flex-col items-start">
+                    <Link href={"/"} className="mb-4">
+                        {Icons.logoDark}
+                    </Link>
                     {mobileNavItems.map((item, index) => (
                         <Button
                             key={index}
                             variant="link"
-                            onClick={() => {
-                                setOpen(false);
-                                router.push(item.path);
-                            }}
+                            asChild
+                            className="p-0 h-auto"
                         >
-                            {item.name}
+                            <Link href={item.path}>{item.name}</Link>
                         </Button>
                     ))}
                 </div>

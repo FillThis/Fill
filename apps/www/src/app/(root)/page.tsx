@@ -1,26 +1,46 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-import { BsThreeDotsVertical } from "react-icons/bs";
-import { FaPlus } from "react-icons/fa";
-import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
-    const data = useSession();
-    const [input, setInput] = useState<string>("");
-    const router = useRouter();
+    const [pathToNavigate, setPathToNavigate] = useState<string>("/login");
 
-    const handelInput = (e: any) => {
-        setInput(e.target.value);
-    };
+    useEffect(() => {
+        // let loggedin = Check if user is login or not.
+        // if (loggedin) {
+        //     setPathToNavigate("/dashboard");
+        // } else {
+        //     setPathToNavigate("/login");
+        // }
+    });
 
     return (
         <>
-            <section className="flex flex-col h-full w-full">
-                <main className=""></main>
-            </section>
+            <main className="flex flex-col items-center w-full">
+                <div
+                    id="intro"
+                    className="flex flex-col h-dvh gap-y-10 justify-center items-center"
+                >
+                    <h1 className="font-light text-center leading-[1.12] tracking-tighter text-[5rem]">
+                        An ai form generator
+                    </h1>
+                    <p className="w-[90%] max-w-4xl text-center font-normal text-base">
+                        {
+                            "An web based intuitive SaaS platform that takes your prompt and generates customized, dynamic forms instantly, enhancing data collection and user interaction."
+                        }
+                    </p>
+                    <Link href={pathToNavigate}>
+                        <Button
+                            variant={"default"}
+                            className="bg-white text-black px-16 my-4"
+                        >
+                            Get started
+                        </Button>
+                    </Link>
+                </div>
+            </main>
         </>
     );
 }

@@ -1,97 +1,48 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 
 function page() {
     return (
-        <div className=" flex  h-screen w-full bg-[#26272c]">
-            <div className="py-[3rem] flex flex-col gap-[4rem] items-center h-full w-[30%] bg-[#171717]">
-                <Image
-                    src={"/byte_forms.svg"}
-                    alt="Byte Forms"
-                    width={200}
-                    height={50}
-                ></Image>
-                <div className="flex flex-col gap-[.6rem] w-[70%]">
-                    <div className="flex flex-col gap-[.2rem]">
-                        <label
-                            htmlFor="email"
-                            className="text-[1rem] font-medium text-[#E6E6E6]"
-                        >
-                            Email
-                        </label>
-                        <input
-                            type="email"
-                            id="email"
-                            className=" h-[2.2rem] px-[.6rem] rounded-[.3rem] text-[#E6E6E6] placeholder:font-light placeholder:text-white/20  bg-[#111111] "
-                            placeholder="name@host.com"
-                        />
-                    </div>
-                    <div className="flex flex-col gap-[.2rem]">
-                        <label
-                            htmlFor="Password"
-                            className="text-[1rem] font-medium text-[#E6E6E6]"
-                        >
-                            Password
-                        </label>
-                        <input
-                            type="password"
-                            className=" h-[2.2rem] px-[.6rem] rounded-[.3rem] text-[#E6E6E6] placeholder:font-light placeholder:text-white/20  bg-[#111111] "
-                            id="Password"
-                            placeholder="password"
-                        />
-                        <p className="mt-[.1rem] cursor-pointer text-[.8rem] text-[#0012FF]">
-                            Forgot password?
-                        </p>
-                    </div>
-                    <div className="mt-[1rem] flex flex-col gap-[.6rem]">
-                        <button
-                            type="button"
-                            className="flex justify-center items-center rounded-[.3rem] bg-gradient-to-r from-[#F4546D] via-[#AC4EF4] to-[#5A87FD]  h-[2.4rem] w-full text-white font-semibold"
-                        >
-                            Login
-                        </button>
-                        <p className="text-center text-[#E6E6E6] text-[.9rem]">
-                            Need an account?{" "}
-                            <Link
-                                href={"/signup"}
-                                className="ml-[.1rem] text-[#0012FF]"
-                            >
-                                Sign up
-                            </Link>{" "}
-                        </p>
-                    </div>
-
-                    <div className="mt-[1.6rem] relative flex items-center justify-center w-full">
-                        <div className="flex z-10 justify-center items-center h-[2.4rem] w-[2.4rem] rounded-full border-[1px] text-[.8rem] border-[#E6E6E6]/20 text-[#E6E6E6] bg-[#171717] ">
-                            OR
-                        </div>
-                        <hr className="absolute w-full border-[#E6E6E6]/20" />
-                    </div>
-
-                    <div className="mt-[2rem] flex flex-col gap-[.8rem]">
-                        <button
-                            onClick={() => signIn("google")}
-                            className="px-[1rem] flex justify-center items-center gap-[.6rem] rounded-[.3rem] bg-[#26272c]  h-[2.4rem] w-full text-white font-semibold"
-                        >
-                            <FcGoogle className="text-[1.6rem]" />
-                            <h2 className="text-[1.1rem]">Google</h2>
-                        </button>
-                        <button
-                            onClick={() => signIn("github")}
-                            className="px-[1rem] flex justify-center items-center gap-[.6rem] rounded-[.3rem] bg-[#26272c]  h-[2.4rem] w-full  font-semibold"
-                        >
-                            <FaGithub className="text-[1.7rem]" />
-                            <h2 className="text-[1.1rem] text-white">Github</h2>
-                        </button>
-                    </div>
-                </div>
+        <div
+            id="login-page"
+            className="m-auto gap-y-8 flex flex-col w-[90%] max-w-md h-full items-center justify-center"
+        >
+            <p className="text-[2rem] text-white">Login</p>
+            <div className="flex flex-col items-end gap-y-8 w-full">
+                <span className="w-full flex flex-col gap-y-4">
+                    <Label htmlFor="email">Enter email</Label>
+                    <Input
+                        id="email"
+                        name="email"
+                        placeholder="e.g. name@example.com"
+                        type="email"
+                    ></Input>
+                </span>
+                <span className="w-full flex flex-col gap-y-4">
+                    <Label htmlFor="password">Enter password</Label>
+                    <Input
+                        id="password"
+                        name="password"
+                        placeholder="********"
+                        type="password"
+                    ></Input>
+                </span>
+                <Button type="button" className="w-32">
+                    Login
+                </Button>
             </div>
-            <div className="h-full w-full bg-[#1e1e1e]"></div>
+            <div
+                id="or-text"
+                className="flex items-center justify-center gap-x-4 text-white text-center opacity-50"
+            >
+                <span className="h-[1px] w-32 bg-white"></span>
+                or
+                <span className="h-[1px] w-32 bg-white"></span>
+            </div>
         </div>
     );
 }

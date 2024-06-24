@@ -6,13 +6,14 @@ import { Button } from "../ui/button";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useRouter } from "next/navigation";
 import { mainNavItems } from "./mainNavItems";
+import Link from "next/link";
 
 const MainNavBar = () => {
     const router: AppRouterInstance = useRouter();
 
     return (
         <div className="flex items-center justify-between w-full">
-            {Icons.logo}
+            <Link href="/">{Icons.logo}</Link>
             <ul className="hidden md:flex gap-x-8">
                 {mainNavItems.map((item, index) => {
                     return (

@@ -1,3 +1,5 @@
+import { InfoIcon } from "lucide-react";
+
 interface IMobileNavItem {
     name: string;
     path: string;
