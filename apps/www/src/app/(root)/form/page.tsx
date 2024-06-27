@@ -6,11 +6,11 @@ import { FaTelegramPlane, FaUpload } from "react-icons/fa";
 
 function page() {
     return (
-        <section className="flex flex-col  h-fit w-full bg-[#1e1e1e]">
+        <section className="flex flex-col  h-fit w-full bg-light_bg dark:bg-dark_bg ">
             <main className="relative px-[4rem] py-[3rem] flex justify-center items-center gap-[3rem] h-full  w-full">
                 <form
                     action=""
-                    className="px-[3rem] py-[2rem] flex flex-col gap-[1.4rem] rounded-[.5rem] w-[40rem] bg-[#252525] text-[#E6E6E6]"
+                    className="px-[3rem] py-[2rem] flex flex-col gap-[1.4rem] rounded-[.5rem] w-[40rem] bg-light_bg_50 text-light_text_gray dark:bg-dark_bg_50/80 dark:text-dark_text_gray"
                 >
                     <div className="mb-[1.6rem]">
                         <h1 className="text-[1.6rem] font-semibold">
@@ -23,7 +23,7 @@ function page() {
                         </h4>
                     </div>
                     {/* ---------------------------- form --------------------------- */}
-                    <div className="px-[1rem] py-[1rem] flex flex-col gap-[.6rem] rounded-[.4rem] bg-[#2f2f2f]">
+                    <div className="px-[1rem] py-[1rem] flex flex-col gap-[.6rem] rounded-[.4rem] bg-white dark:bg-dark_bg_50">
                         <label
                             htmlFor="name"
                             className="text-[1.2rem] font-medium"
@@ -33,12 +33,12 @@ function page() {
                         <input
                             id="name"
                             type="text"
-                            className="pb-[.4rem] border-b-[1.5px] placeholder:text-[#585858] border-[#585858] bg-transparent"
+                            className="outline-none pb-[.4rem] border-b-[1.5px] placeholder:text-[#585858] border-[#585858] bg-transparent"
                             placeholder="Enter your name"
                         />
                     </div>
 
-                    <div className="px-[1rem] py-[1rem] flex flex-col gap-[.6rem] rounded-[.4rem] bg-[#2f2f2f]">
+                    <div className="px-[1rem] py-[1rem] flex flex-col gap-[.6rem] rounded-[.4rem] bg-white dark:bg-dark_bg_50">
                         <label
                             htmlFor="email"
                             className="text-[1.2rem] font-medium"
@@ -53,7 +53,7 @@ function page() {
                         />
                     </div>
 
-                    <div className="px-[1rem] py-[1rem] flex flex-col gap-[.6rem] rounded-[.4rem] bg-[#2f2f2f]">
+                    <div className="px-[1rem] py-[1rem] flex flex-col gap-[.6rem] rounded-[.4rem] bg-white dark:bg-dark_bg_50">
                         <label
                             htmlFor="dateofbirth"
                             className="text-[1.2rem] font-medium"
@@ -68,7 +68,7 @@ function page() {
                         />
                     </div>
 
-                    <div className="px-[1rem] py-[1rem] flex flex-col gap-[.6rem] rounded-[.4rem] bg-[#2f2f2f]">
+                    <div className="px-[1rem] py-[1rem] flex flex-col gap-[.6rem] rounded-[.4rem] bg-white dark:bg-dark_bg_50">
                         <label
                             htmlFor="dateofbirth"
                             className="text-[1.2rem] font-medium"
@@ -89,7 +89,7 @@ function page() {
                         </div>
                     </div>
 
-                    <div className="px-[1rem] py-[1rem] flex flex-col gap-[.6rem] rounded-[.4rem] bg-[#2f2f2f]">
+                    <div className="px-[1rem] py-[1rem] flex flex-col gap-[.6rem] rounded-[.4rem] bg-white dark:bg-dark_bg_50">
                         <label
                             htmlFor="file"
                             className="text-[1.2rem] font-medium"
@@ -114,7 +114,7 @@ function page() {
 
                     {/* ---------------------------- form --------------------------- */}
                     <div className="flex justify-between items-center">
-                        <button className=" w-[6.2rem] h-[2.2rem] rounded-[.2rem] font-medium  bg-gradient-to-r from-red-500 via-pink-500  via-purple-500 to-blue-500">
+                        <button className=" w-[6.2rem] h-[2.2rem] rounded-[.2rem] font-medium  bg-light_text_black dark:bg-dark_text_white text-light_bg dark:text-dark_bg">
                             Submit
                         </button>
                         <button className=" w-[6.2rem] h-[2.2rem] rounded-[.2rem] ">

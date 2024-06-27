@@ -18,23 +18,24 @@ export default function Home() {
 
     return (
         <>
-            <main className="flex flex-col items-center w-full">
+            <main className="flex flex-col justify-center items-center h-screen w-full bg-light_bg dark:bg-dark_bg">
                 <div
                     id="intro"
-                    className="flex flex-col h-dvh gap-y-10 justify-center items-center"
+                    className="flex flex-col gap-y-10 justify-center items-center bg-transparent"
                 >
-                    <h1 className="font-light text-center leading-[1.12] tracking-tighter text-[5rem]">
+                    <h1 className="font-light text-center leading-[1.12] tracking-tighter text-[5rem] text-light_text_black dark:text-dark_text_white">
                         An ai form generator
                     </h1>
-                    <p className="w-[90%] max-w-4xl text-center font-normal text-base">
-                        {
-                            "An web based intuitive SaaS platform that takes your prompt and generates customized, dynamic forms instantly, enhancing data collection and user interaction."
-                        }
+                    <p className="w-[90%] max-w-4xl text-center font-normal text-base text-light_text_black dark:text-dark_text_white">
+                        An web based intuitive SaaS platform that takes your
+                        prompt and generates customized, dynamic forms
+                        instantly, enhancing data collection and user
+                        interaction."
                     </p>
                     <Link href={pathToNavigate}>
                         <Button
                             variant={"default"}
-                            className="bg-white text-black px-16 my-4"
+                            className="bg-light_text_black dark:bg-dark_text_white text-light_bg dark:text-dark_bg px-16 my-4"
                         >
                             Get started
                         </Button>
