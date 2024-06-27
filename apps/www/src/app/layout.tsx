@@ -4,6 +4,8 @@ import JotaiProvider from "@/providers/JotaiProvider";
 import AuthProvider from "@/providers/AuthProvider";
 import { Metadata } from "next";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/providers/ThemeProvider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,9 +26,11 @@ export default function RootLayout({
                     inter.className,
                 )}
             >
-                <AuthProvider>
-                    <JotaiProvider>{children}</JotaiProvider>
-                </AuthProvider>
+                <ThemeProvider attribute="class" defaultTheme="system">
+                    <AuthProvider>
+                        <JotaiProvider>{children}</JotaiProvider>
+                    </AuthProvider>
+                </ThemeProvider>
             </body>
         </html>
     );
