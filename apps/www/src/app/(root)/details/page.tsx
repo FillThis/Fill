@@ -6,7 +6,7 @@ function page() {
     return (
         <section className="flex flex-col h-screen w-full bg-light_bg dark:bg-dark_bg">
             <main className="px-[4rem]  py-[3rem] flex justify-center items-center gap-[3rem] h-full w-full">
-                <div className="flex flex-col items-center gap-[1rem] w-[25rem]">
+                <div className="flex flex-col items-center gap-[1rem] w-[25rem] max-sm:w-[30rem]">
                     <input
                         type="text"
                         id="email"
