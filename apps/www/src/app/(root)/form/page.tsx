@@ -7,10 +7,10 @@ import { FaTelegramPlane, FaUpload } from "react-icons/fa";
 function page() {
     return (
         <section className="flex flex-col  h-fit w-full bg-light_bg dark:bg-dark_bg ">
-            <main className="relative px-[4rem] py-[3rem] flex justify-center items-center gap-[3rem] h-full  w-full">
+            <main className="relative px-[4rem]  max-sm:px-[1rem] py-[3rem] flex justify-center items-center gap-[3rem] h-full  w-full">
                 <form
                     action=""
-                    className="px-[3rem] py-[2rem] flex flex-col gap-[1.4rem] rounded-[.5rem] w-[40rem] bg-light_bg_50 text-light_text_gray dark:bg-dark_bg_50/80 dark:text-dark_text_gray"
+                    className="px-[3rem] max-sm:px-[1.6rem] py-[2rem] flex flex-col gap-[1.4rem] rounded-[.5rem] w-[40rem] bg-light_bg_50 text-light_text_gray dark:bg-dark_bg_50/80 dark:text-dark_text_gray"
                 >
                     <div className="mb-[1.6rem]">
                         <h1 className="text-[1.6rem] font-semibold">
