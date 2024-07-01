@@ -16,20 +16,12 @@ const MobileNavBar = () => {
 
     return (
         <Sheet open={open} onOpenChange={setOpen}>
-            {/* This button will trigger open the mobile sheet menu */}
-            <SheetTrigger asChild>
-                <Button
-                    size="icon"
-                    variant={"link"}
-                    className="md:hidden text-white"
-                    onClick={() => setOpen((prev) => !prev)}
-                >
-                    <MenuIcon />
-                </Button>
+            <SheetTrigger>
+                <MenuIcon className="cursor-pointer md:hidden" />
             </SheetTrigger>
 
             <SheetContent side="left">
-                <div className="flex gap-y-4 flex-col items-start">
+                <div className="flex flex-col items-start gap-y-4">
                     <Link href={"/"} className="mb-4">
                         {Icons.logoDark}
                     </Link>
@@ -38,7 +30,7 @@ const MobileNavBar = () => {
                             key={index}
                             variant="link"
                             asChild
-                            className="p-0 h-auto"
+                            className="h-auto p-0"
                         >
                             <Link href={item.path}>{item.name}</Link>
                         </Button>

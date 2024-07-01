@@ -12,4 +12,8 @@ export const mainNavItems: IMainNavItem[] = [
         name: "Dashboard",
         path: "/dashboard",
     },
+    {
+        name: "Login",
+        path: "/login",
+    },
 ];

@@ -7,11 +7,15 @@ interface IMobileNavItem {
 
 export const mobileNavItems: IMobileNavItem[] = [
     {
+        name: "Dashboard",
+        path: "/dashboard",
+    },
+    {
         name: "About",
         path: "/about",
     },
     {
-        name: "Dashboard",
-        path: "/dashboard",
+        name: "Login",
+        path: "/login",
     },
 ];

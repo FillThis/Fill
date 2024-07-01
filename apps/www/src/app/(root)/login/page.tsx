@@ -4,60 +4,69 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { Icons } from "@/components/icons/icons";
+import OrSeperator from "@/components/ui/orSeperator";
 
 function page() {
+    const handleSigninWithGoogle = () => {
+        // Sign in with google logic
+    };
+
     return (
-        <div className="h-screen w-full flex justify-center items-center bg-light_bg dark:bg-dark_bg">
+        <div className="bg-background flex h-screen w-full items-center justify-center">
             <div
                 id="login-page"
-                className="m-auto gap-y-8 flex flex-col w-[90%] max-w-md h-full items-center justify-center bg-light_bg dark:bg-dark_bg"
+                className="m-auto flex h-full w-[90%] max-w-md flex-col items-center justify-center gap-y-8"
             >
-                <p className="text-[2rem] text-light_text_black dark:text-dark_text_white">
+                <h1 className="text-foreground mb-4 text-[2rem] font-medium -tracking-tighter">
                     Login
-                </p>
-                <div className="flex flex-col items-end gap-y-8 w-full">
-                    <span className="w-full flex flex-col gap-y-4">
-                        <Label
-                            htmlFor="email"
-                            className="text-light_text_black dark:text-dark_text_white"
-                        >
-                            Enter email
-                        </Label>
+                </h1>
+                {/* Login Form */}
+                <div className="flex w-full flex-col items-end gap-y-8">
+                    <span className="flex w-full flex-col gap-y-4">
+                        <Label htmlFor="email">Enter email</Label>
                         <Input
                             id="email"
                             name="email"
                             placeholder="e.g. name@example.com"
                             type="email"
-                            className="text-light_text_black dark:text-dark_text_white border-light_text_black dark:border-dark_text_white bg-transparent"
                         ></Input>
                     </span>
-                    <span className="w-full flex flex-col gap-y-4">
-                        <Label
-                            htmlFor="password"
-                            className="text-light_text_black dark:text-dark_text_white"
-                        >
-                            Enter password
-                        </Label>
+                    <span className="flex w-full flex-col gap-y-4">
+                        <Label htmlFor="password">Enter password</Label>
                         <Input
                             id="password"
                             name="password"
                             placeholder="********"
                             type="password"
-                            className="text-light_text_black dark:text-dark_text_white border-light_text_black dark:border-dark_text_white bg-transparent"
                         ></Input>
                     </span>
                     <Button type="button" className="w-32">
                         Login
                     </Button>
                 </div>
-                <div
-                    id="or-text"
-                    className="flex items-center justify-center gap-x-4 text-light_text_black dark:text-dark_text_white text-center opacity-50"
+                {/* --- or --- divider */}
+                <OrSeperator />
+                {/* Login with Google */}
+                <Button
+                    className="text-foreground flex w-full items-center justify-center gap-x-2"
+                    variant={"outline"}
+                    onClick={handleSigninWithGoogle}
+                    type="button"
                 >
-                    <span className="h-[1px] w-32 bg-light_text_black dark:bg-dark_text_white"></span>
-                    or
-                    <span className="h-[1px] w-32 bg-light_text_black dark:bg-dark_text_white"></span>
-                </div>
+                    {Icons.google}
+                    Signin with Google
+                </Button>
+                {/* Create an account */}
+                <p>
+                    Don't have an account?{" "}
+                    <Link
+                        className="transition-opacity hover:underline"
+                        href={"/register"}
+                    >
+                        Sign up
+                    </Link>
+                </p>
             </div>
         </div>
     );

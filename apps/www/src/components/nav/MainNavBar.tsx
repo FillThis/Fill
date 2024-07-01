@@ -7,23 +7,21 @@ import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.share
 import { useRouter } from "next/navigation";
 import { mainNavItems } from "./mainNavItems";
 import Link from "next/link";
-import { IoIosSunny, IoMdMoon } from "react-icons/io";
-import { useTheme } from "next-themes";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const MainNavBar = () => {
     const router: AppRouterInstance = useRouter();
-    const { resolvedTheme, theme, setTheme } = useTheme();
 
     return (
-        <div className="flex items-center justify-between w-full ">
+        <div className="flex w-full items-center justify-between">
             <Link href="/">{Icons.logo}</Link>
-            <ul className="hidden md:flex gap-x-8">
+            <ul className="hidden gap-x-8 md:flex">
                 {mainNavItems.map((item, index) => {
                     return (
                         <li key={index}>
                             <Button
                                 variant={"link"}
-                                className="text-inherit font-normal p-0"
+                                className="p-0 font-normal text-inherit"
                                 onClick={() => router.push(item.path)}
                             >
                                 {item.name}
@@ -32,29 +30,7 @@ const MainNavBar = () => {
                     );
                 })}
                 <li className="flex items-center">
-                    {resolvedTheme === "light" ? (
-                        <IoIosSunny
-                            onClick={() =>
-                                setTheme(
-                                    resolvedTheme === "light"
-                                        ? "dark"
-                                        : "light",
-                                )
-                            }
-                            className="text-2xl"
-                        />
-                    ) : (
-                        <IoMdMoon
-                            onClick={() =>
-                                setTheme(
-                                    resolvedTheme === "light"
-                                        ? "dark"
-                                        : "light",
-                                )
-                            }
-                            className="text-2xl"
-                        />
-                    )}
+                    <ThemeSwitcher />
                 </li>
             </ul>
         </div>
