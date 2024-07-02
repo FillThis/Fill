@@ -5,6 +5,8 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
+        "generate-content:build": "contentlayer build",
+        "generate-content:dev": "contentlayer dev",
         "start": "next start",
         "lint": "next lint"
     },
@@ -50,6 +52,7 @@
         "lucide-react": "^0.396.0",
         "next": "14.2.3",
         "next-auth": "^4.24.7",
+        "next-contentlayer": "^0.3.4",
         "next-themes": "^0.3.0",
         "react": "^18",
         "react-day-picker": "^8.10.1",
@@ -68,6 +71,7 @@
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
+        "contentlayer": "^0.3.4",
         "eslint": "^8",
         "eslint-config-next": "14.2.3",
         "lint-staged": "^15.2.7",
