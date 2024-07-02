@@ -2,7 +2,7 @@
 
 <h5>Instruction:</h5>
 
-Please read all rules available in rule set in ```/rules``` directory.
+Please read all rules available in rule-set in ```/rules``` directory in workspaces.
 
 > If you have turbo install in your system then run command dirctly without `npx` otherwise use `npx` to execute turbo commands.
 
