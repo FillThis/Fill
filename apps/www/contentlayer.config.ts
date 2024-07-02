@@ -5,7 +5,12 @@ export const Page = defineDocumentType(() => ({
     filePathPattern: `pages/**/*.mdx`,
     fields: {
         title: { type: "string", required: true },
-        url: { type: "string", required: true },
+    },
+    computedFields: {
+        url: {
+            type: "string",
+            resolve: (page) => `/${page._raw.flattenedPath}`,
+        },
     },
 }));
 

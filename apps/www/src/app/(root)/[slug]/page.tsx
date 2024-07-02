@@ -5,19 +5,15 @@ export const generateStaticParams = async () =>
 
 export default function Pager({ params }: { params: { slug: string } }) {
     const page = allPages.find((page: Page) => {
-        console.log("purl", page.url);
-        console.log("ps", params.slug);
-        console.log(page.url + "\r" == params.slug);
-        return page.url + "\r" === params.slug;
+        console.log(page.url);
+        return page.url.toString() === `/pages/${params.slug}`;
     });
     // if (!page) throw new Error(`Page not found for slug: ${params.slug}`);
 
     return (
         <div>
-            <h1>
-                {page && page.title} + {params.slug}
-            </h1>
-            {/* <div dangerouslySetInnerHTML={{ __html: page.body.html }} /> */}
+            <h1 className="text-[2rem]">{page && page.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: page?.body.html || "" }} />
         </div>
     );
 }
