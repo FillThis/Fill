@@ -3,9 +3,12 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { useRouter } from "next/navigation";
 
 const Home = () => {
     const [pathToNavigate, setPathToNavigate] = useState<string>("/login");
+    const router: AppRouterInstance = useRouter();
 
     useEffect(() => {
         // let loggedin = Check if user is login or not.
@@ -41,6 +44,9 @@ const Home = () => {
                         </Button>
                         <Button
                             variant={"link"}
+                            onClick={() => {
+                                return router.replace("/dashboard");
+                            }}
                             className="mt-8 px-12 md:mt-4 md:px-16"
                         >
                             Open dashboard{" "}
