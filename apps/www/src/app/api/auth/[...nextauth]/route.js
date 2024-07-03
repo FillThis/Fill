@@ -3,8 +3,6 @@ import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
-console.log("env : " + process.env.NEXT_PUBLIC_GITHUB_CLIENT_SECRET);
-
 export const authOptions = {
     providers: [
         GithubProvider({

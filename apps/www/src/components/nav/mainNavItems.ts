@@ -5,12 +5,12 @@ interface IMainNavItem {
 
 export const mainNavItems: IMainNavItem[] = [
     {
-        name: "About",
-        path: "/about",
-    },
-    {
         name: "Dashboard",
         path: "/dashboard",
+    },
+    {
+        name: "About",
+        path: "/about",
     },
     {
         name: "Login",

@@ -3,9 +3,9 @@ import React from "react";
 
 const layout = (props: { children: React.ReactNode }) => {
     return (
-        <div className="w-full flex flex-col bg-black h-dvh max-h-full text-white">
+        <div className="bg-background text-foreground flex h-dvh max-h-full w-full flex-col text-white">
             <Header />
-            {props.children}
+            <main className="h-full w-full">{props.children}</main>
         </div>
     );
 };

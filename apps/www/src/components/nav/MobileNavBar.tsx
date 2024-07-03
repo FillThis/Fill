@@ -23,7 +23,7 @@ const MobileNavBar = () => {
             <SheetContent side="left">
                 <div className="flex flex-col items-start gap-y-4">
                     <Link href={"/"} className="mb-4">
-                        {Icons.logoDark}
+                        {Icons.logo}
                     </Link>
                     {mobileNavItems.map((item, index) => (
                         <Button
