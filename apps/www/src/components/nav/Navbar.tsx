@@ -9,7 +9,7 @@ function Navbar() {
     return (
         <nav
             className={cn(
-                "bg-background text-foreground z-50 flex h-16 w-full items-center px-8 py-4",
+                "bg-background text-foreground flex h-16 w-full items-center px-8 py-4 md:px-16",
             )}
         >
             <MainNavBar />

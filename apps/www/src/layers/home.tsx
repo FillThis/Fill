@@ -18,7 +18,7 @@ const Home = () => {
 
     return (
         <>
-            <main className="bg-background flex h-screen w-full flex-col items-center justify-center">
+            <main className="flex h-dvh w-full flex-col items-center justify-center">
                 <div
                     id="intro"
                     className="flex flex-col items-center justify-center gap-y-4 md:gap-y-10"
@@ -32,14 +32,17 @@ const Home = () => {
                         instantly, enhancing data collection and user
                         interaction."
                     </p>
-                    <div>
+                    <div className="flex w-full items-center justify-center">
                         <Button
                             variant={"default"}
-                            className="mt-8 px-16 md:mt-4"
+                            className="mt-8 px-12 md:mt-4 md:px-16"
                         >
                             Get started
                         </Button>
-                        <Button variant={"link"} className="mt-8 px-16 md:mt-4">
+                        <Button
+                            variant={"link"}
+                            className="mt-8 px-12 md:mt-4 md:px-16"
+                        >
                             Open dashboard{" "}
                         </Button>
                     </div>

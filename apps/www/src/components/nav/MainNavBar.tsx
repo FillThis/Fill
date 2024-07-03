@@ -29,10 +29,10 @@ const MainNavBar = () => {
                         </li>
                     );
                 })}
-                <li className="flex items-center">
-                    <ThemeSwitcher />
-                </li>
             </ul>
+            <span className="max-md:mr-4">
+                <ThemeSwitcher />
+            </span>
         </div>
     );
 };
