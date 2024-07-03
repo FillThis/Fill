@@ -2,6 +2,7 @@ import Forms from "@/components/dashboard/Forms";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { siteConfig } from "@/config/site";
+import { GemIcon } from "lucide-react";
 import React from "react";
 
 const Dashboard = () => {
@@ -13,6 +14,7 @@ const Dashboard = () => {
                     Forms
                 </div>
                 <div className="bg-primary-foreground text-foreground w-full rounded-[2rem] p-4 text-base font-medium">
+                    <GemIcon size={20} className="text-muted-foreground mb-2" />
                     Become member
                     <span className="bg-muted-foreground mb-4 mt-2 block h-[1px] w-10 rounded-full"></span>
                     <p className="text-muted-foreground my-4 font-normal">
