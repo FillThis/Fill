@@ -7,7 +7,7 @@ import React from "react";
 
 const Dashboard = () => {
     return (
-        <div className="grid h-full w-full grid-cols-5 gap-x-4 py-4">
+        <div className="grid h-full w-full grid-cols-5 gap-x-4">
             {/* Side menu */}
             <aside className="bg-foreground/5 col-span-1 flex h-full flex-col justify-between gap-y-4 rounded-xl p-8">
                 <div className="bg-foreground text-background w-full rounded-full px-4 py-2">

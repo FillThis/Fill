@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import CreateForm from "./CreateForm";
 import GeneratedFormItem from "./GeneratedFormItem";

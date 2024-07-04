@@ -1,4 +1,4 @@
-import Dashboard from "@/layers/dashboard";
+import Dashboard from "@/layers/dashboard/index";
 import { Metadata } from "next";
 import React from "react";
 

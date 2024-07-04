@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
 import JotaiProvider from "@/providers/JotaiProvider";
 import AuthProvider from "@/providers/AuthProvider";
 import { Metadata } from "next";
