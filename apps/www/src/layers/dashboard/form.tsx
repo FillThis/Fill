@@ -31,6 +31,7 @@ const FormPage: React.FC = () => {
         <div className="m-auto flex h-full w-full max-w-4xl flex-col gap-8">
             <section className="bg-foreground/10 rounded-2xl p-12">
                 <h1 className="text-[2rem]">{formData.formName}</h1>
+                {/* <span className="block my-4 w-24 h-[1px] rounded-full bg-muted-foreground"></span> */}
                 <p className="text-muted-foreground mt-2">
                     {formData.formDescription}
                 </p>
