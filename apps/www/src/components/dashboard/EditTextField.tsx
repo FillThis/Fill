@@ -13,17 +13,18 @@ import {
 } from "@/components/ui/dialog";
 import { Edit2Icon } from "lucide-react";
 import { useAtom } from "jotai";
-import { formFieldsStore } from "@/store/formFields.store";
+import { formDataStore } from "@/store/formData.store";
+import { IFormData } from "@/types/form";
 
 const EditTextField = ({ index }: { index: number }) => {
     const [open, setOpen] = useState<boolean>(false);
-    const [formState, setFormState] = useAtom(formFieldsStore);
+    const [formData, setFormData] = useAtom(formDataStore);
 
     const handleLabelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const updatedFields = [...formState.fields];
+        const updatedFields = [...formData.fields];
         updatedFields[index].fieldLabel = e.target.value;
-        setFormState({
-            ...formState,
+        setFormData({
+            ...formData,
             fields: updatedFields,
         });
     };
@@ -31,19 +32,19 @@ const EditTextField = ({ index }: { index: number }) => {
     const handlePlaceholderChange = (
         e: React.ChangeEvent<HTMLInputElement>,
     ) => {
-        const updatedFields = [...formState.fields];
+        const updatedFields = [...formData.fields];
         updatedFields[index].fieldPlaceholder = e.target.value;
-        setFormState({
-            ...formState,
+        setFormData({
+            ...formData,
             fields: updatedFields,
         });
     };
 
     const handleTypeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const updatedFields = [...formState.fields];
+        const updatedFields = [...formData.fields];
         updatedFields[index].fieldType = e.target.value;
-        setFormState({
-            ...formState,
+        setFormData({
+            ...formData,
             fields: updatedFields,
         });
     };
@@ -75,7 +76,7 @@ const EditTextField = ({ index }: { index: number }) => {
                             </Label>
                             <Input
                                 id="label"
-                                value={formState.fields[index].fieldLabel}
+                                value={formData?.fields[index].fieldLabel!}
                                 onChange={handleLabelChange}
                                 className="col-span-3 mr-2"
                             />
@@ -84,7 +85,9 @@ const EditTextField = ({ index }: { index: number }) => {
                             </Label>
                             <Input
                                 id="placeholder"
-                                value={formState.fields[index].fieldPlaceholder}
+                                value={
+                                    formData?.fields[index].fieldPlaceholder!
+                                }
                                 onChange={handlePlaceholderChange}
                                 placeholder="New Placeholder"
                                 className="col-span-3 mr-2"
@@ -94,7 +97,7 @@ const EditTextField = ({ index }: { index: number }) => {
                             </Label>
                             <Input
                                 id="type"
-                                value={formState.fields[index].fieldType}
+                                value={formData?.fields[index].fieldType!}
                                 onChange={handleTypeChange}
                                 placeholder="New Type"
                                 className="col-span-3 mr-2"

@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
-// const nextConfig = {};
-// export default nextConfig;
+const nextConfig = {
+    reactStrictMode: true,
+};
 
 import { withContentlayer } from "next-contentlayer";
-export default withContentlayer({});
+export default withContentlayer(nextConfig);

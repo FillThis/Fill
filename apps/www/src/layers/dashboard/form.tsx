@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useAtom } from "jotai";
-import { formFieldsStore } from "@/store/formFields.store";
+import { formDataStore } from "@/store/formData.store";
 
 interface FormValues {
     email: string;
@@ -15,7 +15,7 @@ interface FormValues {
 }
 
 const FormPage: React.FC = () => {
-    const [formData] = useAtom(formFieldsStore);
+    const [formData] = useAtom(formDataStore);
 
     const {
         register,
