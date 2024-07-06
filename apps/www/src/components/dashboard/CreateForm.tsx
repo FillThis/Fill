@@ -41,8 +41,7 @@ const CreateForm = () => {
 
         // Generate form using gen_ai
         const genAI = new GenAI();
-        let res = await genAI.generateContent(value);
-        console.log(res);
+        let res = await genAI.generateFormContent(value.trim());
 
         // Write in store
         await setFormData(res);

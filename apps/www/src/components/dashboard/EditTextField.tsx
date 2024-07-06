@@ -15,10 +15,16 @@ import { Edit2Icon } from "lucide-react";
 import { useAtom } from "jotai";
 import { formDataStore } from "@/store/formData.store";
 import { IFormData } from "@/types/form";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { HTMLInputTypeAttribute } from "react";
+import { Switch } from "../ui/switch";
 
 const EditTextField = ({ index }: { index: number }) => {
     const [open, setOpen] = useState<boolean>(false);
     const [formData, setFormData] = useAtom(formDataStore);
+    if (!formData) {
+        return;
+    }
 
     const handleLabelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const updatedFields = [...formData.fields];
@@ -49,6 +55,15 @@ const EditTextField = ({ index }: { index: number }) => {
         });
     };
 
+    const handleRequiredChange = (checked: boolean) => {
+        const updatedFields = [...formData.fields];
+        updatedFields[index].required = checked;
+        setFormData({
+            ...formData,
+            fields: updatedFields,
+        });
+    };
+
     const saveField = () => {
         setOpen(false);
     };
@@ -69,19 +84,17 @@ const EditTextField = ({ index }: { index: number }) => {
                             when you're done.
                         </DialogDescription>
                     </DialogHeader>
-                    <div className="grid gap-4 py-4">
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="label" className="text-right">
-                                Change label
-                            </Label>
+                    <div className="w-full py-4">
+                        <div className="flex w-full flex-col gap-4">
+                            <Label htmlFor="label">Change Label</Label>
                             <Input
                                 id="label"
                                 value={formData?.fields[index].fieldLabel!}
                                 onChange={handleLabelChange}
                                 className="col-span-3 mr-2"
                             />
-                            <Label htmlFor="placeholder" className="text-right">
-                                Change hint
+                            <Label htmlFor="placeholder" className="mt-4">
+                                Change Hint
                             </Label>
                             <Input
                                 id="placeholder"
@@ -92,16 +105,55 @@ const EditTextField = ({ index }: { index: number }) => {
                                 placeholder="New Placeholder"
                                 className="col-span-3 mr-2"
                             />
-                            <Label htmlFor="type" className="text-right">
-                                Change Type
-                            </Label>
-                            <Input
-                                id="type"
-                                value={formData?.fields[index].fieldType!}
-                                onChange={handleTypeChange}
-                                placeholder="New Type"
-                                className="col-span-3 mr-2"
-                            />
+                            <div className="flex w-full items-center">
+                                <Label htmlFor="type" className="mr-8 shrink-0">
+                                    Change Type
+                                </Label>
+                                <div className="my-4 w-full">
+                                    <RadioGroup
+                                        defaultValue={"password"}
+                                        className="flex w-full flex-col gap-4"
+                                    >
+                                        <div className="flex items-center space-x-2">
+                                            <RadioGroupItem
+                                                value="text"
+                                                id="r1"
+                                            />
+                                            <Label htmlFor="r1">Text</Label>
+                                        </div>
+                                        <div className="flex items-center space-x-2">
+                                            <RadioGroupItem
+                                                value="number"
+                                                id="r2"
+                                            />
+                                            <Label htmlFor="r2">Number</Label>
+                                        </div>
+                                        <div className="flex items-center space-x-2">
+                                            <RadioGroupItem
+                                                value="email"
+                                                id="r3"
+                                            />
+                                            <Label htmlFor="r3">Email</Label>
+                                        </div>
+                                        <div className="flex items-center space-x-2">
+                                            <RadioGroupItem
+                                                value="password"
+                                                id="r4"
+                                            />
+                                            <Label htmlFor="r4">Password</Label>
+                                        </div>
+                                    </RadioGroup>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <Switch
+                                    checked={formData.fields[index].required}
+                                    onCheckedChange={handleRequiredChange}
+                                />
+                                <Label htmlFor="required" className="t">
+                                    Required
+                                </Label>
+                            </div>
                         </div>
                     </div>
                     <DialogFooter>
