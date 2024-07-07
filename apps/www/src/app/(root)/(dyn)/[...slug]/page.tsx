@@ -1,3 +1,12 @@
+/**
+  * Copyright © 2024 "ascen".
+  * All rights reserved.
+
+  * This file is part of the ascen project.
+  * Unauthorized copying of this file, via any medium, is strictly prohibited.
+  * Proprietary and confidential.
+  */
+
 import { notFound } from "next/navigation";
 import { allPages, Page } from "contentlayer/generated";
 import { Mdx } from "@/components/mdx/mdx-components";

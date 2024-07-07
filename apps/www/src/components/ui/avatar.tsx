@@ -1,3 +1,12 @@
+/**
+  * Copyright © 2024 "ascen".
+  * All rights reserved.
+
+  * This file is part of the ascen project.
+  * Unauthorized copying of this file, via any medium, is strictly prohibited.
+  * Proprietary and confidential.
+  */
+
 "use client";
 
 import * as React from "react";
@@ -39,7 +48,7 @@ const AvatarFallback = React.forwardRef<
     <AvatarPrimitive.Fallback
         ref={ref}
         className={cn(
-            "flex h-full w-full items-center justify-center rounded-full bg-muted",
+            "bg-muted flex h-full w-full items-center justify-center rounded-full",
             className,
         )}
         {...props}

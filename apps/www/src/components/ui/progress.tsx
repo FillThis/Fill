@@ -1,3 +1,12 @@
+/**
+  * Copyright © 2024 "ascen".
+  * All rights reserved.
+
+  * This file is part of the ascen project.
+  * Unauthorized copying of this file, via any medium, is strictly prohibited.
+  * Proprietary and confidential.
+  */
+
 "use client";
 
 import * as React from "react";
@@ -12,13 +21,13 @@ const Progress = React.forwardRef<
     <ProgressPrimitive.Root
         ref={ref}
         className={cn(
-            "relative h-4 w-full overflow-hidden rounded-full bg-secondary",
+            "bg-secondary relative h-4 w-full overflow-hidden rounded-full",
             className,
         )}
         {...props}
     >
         <ProgressPrimitive.Indicator
-            className="h-full w-full flex-1 bg-primary transition-all"
+            className="bg-primary h-full w-full flex-1 transition-all"
             style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
         />
     </ProgressPrimitive.Root>

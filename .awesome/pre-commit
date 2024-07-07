@@ -2,4 +2,5 @@
 . "$(dirname -- "$0")/_/awesome.sh"
 
 npm run add:copyright
+git add .
 npx lint-staged
