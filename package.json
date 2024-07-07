@@ -6,7 +6,8 @@
         "dev": "turbo dev",
         "lint": "turbo lint",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-        "prepare": "awesome init"
+        "prepare": "awesome init",
+        "add:copyright": "node ./scripts/copyright"
     },
     "devDependencies": {
         "@ascen/awesome": "^1.2.0",
