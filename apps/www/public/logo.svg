@@ -1,0 +1,14 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 340 300" style="enable-background:new 0 0 340 300;" xml:space="preserve">
+<g>
+	<rect x="0" y="40" style="fill:#1a1a1a;" width="340" height="20"/>
+	<rect x="0" y="80" style="fill:#1a1a1a;" width="340" height="20"/>
+	<rect x="0" y="160" style="fill:#1a1a1a;" width="340" height="20"/>
+	<rect x="0" y="240" style="fill:#1a1a1a;" width="80" height="20"/>
+	<rect x="0" y="240" style="fill:#1a1a1a;" width="20" height="60"/>
+	<rect x="100" y="240" style="fill:#1a1a1a;" width="240" height="20"/>
+	<rect x="100" y="200" style="fill:#1a1a1a;" width="240" height="20"/>
+	<rect x="0" y="200" style="fill:#1a1a1a;" width="80" height="20"/>
+	<rect x="0" y="120" style="fill:#1a1a1a;" width="340" height="20"/>
+</g>
+</svg>
