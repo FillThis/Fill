@@ -18,7 +18,7 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Byte Forms",
+    title: "Fomrs",
     description: "An ai form generator.",
 };
 

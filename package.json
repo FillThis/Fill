@@ -1,5 +1,5 @@
 {
-    "name": "byteforms",
+    "name": "forms",
     "private": true,
     "scripts": {
         "build": "turbo build",
