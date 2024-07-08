@@ -18,7 +18,7 @@
 import { atom } from "jotai";
 import { IFormData } from "../types/form.d";
 
-// /*
+/*
 const formFields: IFormData = {
     formName: "v",
     formDescription: "v",
@@ -79,6 +79,7 @@ const formFields: IFormData = {
         },
     ],
 };
-// */
+*/
 
-export const formDataStore = atom<IFormData | null>(formFields);
+// export const formDataStore = atom<IFormData | null>(formFields);
+export const formDataStore = atom<IFormData | null>(null);

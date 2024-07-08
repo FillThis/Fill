@@ -22,7 +22,7 @@ const layout = (props: { children: React.ReactNode }) => {
     return (
         <div className="bg-background text-foreground flex h-dvh max-h-full w-full flex-col text-white">
             <Header />
-            <main className="h-full w-full p-8 py-4">{props.children}</main>
+            <main className="w-full px-8 py-4">{props.children}</main>
         </div>
     );
 };

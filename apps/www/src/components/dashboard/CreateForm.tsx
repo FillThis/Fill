@@ -60,14 +60,8 @@ const CreateForm = () => {
         const genAI = new GenAI();
         let res = await genAI.generateFormContent(value.trim());
 
-        console.log("end");
-
         // Write in store
         await setFormData(res);
-        console.log("res " + res);
-        console.log(formData);
-        console.log("2 " + formData);
-
         setLoading(false);
         return router.push("dashboard/form");
     };

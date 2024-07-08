@@ -20,13 +20,15 @@ import React from "react";
 
 const FormHeader = (props: { formName: string; formDesc: string }) => {
     return (
-        <section className="bg-foreground/10 rounded-3xl p-12">
-            <Logo className="" />
-            <h1 className="mt-6 text-[2rem] tracking-tight">
-                {props.formName}
-            </h1>
-            {/* <span className="block my-4 w-24 h-[1px] rounded-full bg-muted-foreground"></span> */}
-            <p className="text-muted-foreground">{props.formDesc}</p>
+        <section className="bg-foreground/10 flex items-center gap-10 rounded-3xl p-12">
+            <div className="bg-foreground/10 rounded-xl p-6">
+                <Logo />
+            </div>
+            <span className="bg-muted-foreground block h-20 w-[1px] rounded-full"></span>
+            <div>
+                <h1 className="text-[2rem] tracking-tight">{props.formName}</h1>
+                <p className="text-muted-foreground">{props.formDesc}</p>
+            </div>
         </section>
     );
 };

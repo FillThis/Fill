@@ -20,92 +20,40 @@ import React from "react";
 
 interface LogoProps {
     className?: string;
+    size?: number;
 }
 
-const Logo: React.FC<LogoProps> = ({ className }) => {
+const Logo: React.FC<LogoProps> = ({ className, size = 32 }) => {
     return (
         <div
             className={cn("text-foreground flex items-center gap-4", className)}
         >
             <svg
-                version="1.1"
                 id="Layer_1"
-                height={30}
+                data-name="Layer 1"
+                className="fill-current"
+                height={size}
                 xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                x="0px"
-                y="0px"
-                viewBox="0 0 340 300"
-                enableBackground="new 0 0 340 300"
-                xmlSpace="preserve"
+                viewBox="0 0 600.5 260"
             >
-                <g>
-                    <rect
-                        x="0"
-                        y="40"
-                        className="fill-current"
-                        width="340"
-                        height="20"
-                    />
-                    <rect
-                        x="0"
-                        y="80"
-                        className="fill-current"
-                        width="340"
-                        height="20"
-                    />
-                    <rect
-                        x="0"
-                        y="160"
-                        className="fill-current"
-                        width="340"
-                        height="20"
-                    />
-                    <rect
-                        x="260"
-                        y="240"
-                        className="fill-current"
-                        width="80"
-                        height="20"
-                    />
-                    <rect
-                        x="260"
-                        y="240"
-                        className="fill-current"
-                        width="20"
-                        height="60"
-                    />
-                    <rect
-                        x="0"
-                        y="240"
-                        className="fill-current"
-                        width="240"
-                        height="20"
-                    />
-                    <rect
-                        x="0"
-                        y="200"
-                        className="fill-current"
-                        width="240"
-                        height="20"
-                    />
-                    <rect
-                        x="260"
-                        y="200"
-                        className="fill-current"
-                        width="80"
-                        height="20"
-                    />
-                    <rect
-                        x="0"
-                        y="120"
-                        className="fill-current"
-                        width="340"
-                        height="20"
-                    />
-                </g>
+                <rect width="340" height="20" />
+                <rect y="40" width="340" height="20" />
+                <rect y="120" width="340" height="20" />
+                <rect x="260" y="200" width="80" height="20" />
+                <rect x="260" y="200" width="20" height="60" />
+                <rect y="200" width="240" height="20" />
+                <rect y="160" width="240" height="20" />
+                <rect x="260" y="160" width="80" height="20" />
+                <rect y="80" width="340" height="20" />
+                <rect x="400.5" y="119.75" width="80" height="20" />
+                <rect x="400.5" y="119.75" width="20" height="60" />
+                <rect x="400.5" y="79.75" width="80" height="20" />
+                <rect x="500.5" y="119.75" width="20" height="60" />
+                <rect x="540.5" y="79.75" width="20" height="100" />
+                <rect x="580.5" y="79.75" width="20" height="100" />
+                <rect x="500.5" y="79.75" width="20" height="20" />
+                <polygon points="500.5 99.75 520.5 99.75 500.5 119.75 500.5 99.75" />
             </svg>
-            <span className="text-[20px] font-medium">Forms</span>
         </div>
     );
 };

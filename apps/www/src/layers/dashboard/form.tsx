@@ -32,6 +32,7 @@ import FormHeader from "@/components/header/FormHeader";
 import { Textarea } from "@/components/ui/textarea";
 import { Edit2Icon } from "lucide-react";
 import FormInputType from "@/components/dashboard/form/FormInputType";
+import LinksFooter from "@/components/footer/LinksFooter";
 
 interface FormValues {
     email: string;
@@ -45,7 +46,7 @@ const FormPage: React.FC = () => {
     }
 
     return (
-        <div className="m-auto flex h-full w-full max-w-4xl flex-col gap-8">
+        <div className="m-auto my-8 flex w-full max-w-4xl flex-col gap-8">
             <FormHeader
                 formName={formData.formName!}
                 formDesc={formData.formDescription!}
@@ -104,6 +105,7 @@ const FormPage: React.FC = () => {
                     Create form
                 </Button>
             </form>
+            <LinksFooter />
         </div>
     );
 };

@@ -18,7 +18,7 @@
 import { IFormData } from "@/types/form";
 
 export class PromptsDef {
-    static formPromptDef(subject: string) {
+    static formPromptDef(subject: string): string {
         const exRes: IFormData = {
             formName: "Student goa trip",
             formDescription:
@@ -86,5 +86,6 @@ export class PromptsDef {
 
         Example Response:
         ${exRes}`;
+        return template;
     }
 }

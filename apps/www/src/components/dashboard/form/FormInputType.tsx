@@ -53,7 +53,10 @@ const FormInputType: React.FC<FormInputTypeProps> = ({
                 <RadioGroup className="my-2 flex flex-col gap-4">
                     {options &&
                         options.map((option, index) => (
-                            <div className="flex items-center space-x-2">
+                            <div
+                                key={index}
+                                className="flex items-center space-x-2"
+                            >
                                 <RadioGroupItem
                                     value={option.value!}
                                     id={index.toString()}
@@ -77,7 +80,10 @@ const FormInputType: React.FC<FormInputTypeProps> = ({
                             <SelectLabel>Options</SelectLabel>
                             {options &&
                                 options.map((option, index) => (
-                                    <SelectItem value={option.value!}>
+                                    <SelectItem
+                                        key={index}
+                                        value={option.value!}
+                                    >
                                         {option.label}
                                     </SelectItem>
                                 ))}
