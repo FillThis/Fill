@@ -1,12 +1,3 @@
-/**
-  * Copyright © 2024 "ascen".
-  * All rights reserved.
-
-  * This file is part of the ascen project.
-  * Unauthorized copying of this file, via any medium, is strictly prohibited.
-  * Proprietary and confidential.
-  */
-
 "use client";
 
 import React from "react";
@@ -39,7 +30,7 @@ const MainNavBar = () => {
                     );
                 })}
             </ul>
-            <span className="max-md:mr-4">
+            <span className="cursor-pointer max-md:mr-4">
                 <ThemeSwitcher />
             </span>
         </div>

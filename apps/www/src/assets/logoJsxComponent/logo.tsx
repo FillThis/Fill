@@ -1,12 +1,3 @@
-/**
-  * Copyright © 2024 "ascen".
-  * All rights reserved.
-
-  * This file is part of the ascen project.
-  * Unauthorized copying of this file, via any medium, is strictly prohibited.
-  * Proprietary and confidential.
-  */
-
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -16,10 +7,13 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ className }) => {
     return (
-        <div className={cn("text-foreground", className)}>
+        <div
+            className={cn("text-foreground flex items-center gap-4", className)}
+        >
             <svg
                 version="1.1"
                 id="Layer_1"
+                height={30}
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 x="0px"
@@ -94,6 +88,7 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
                     />
                 </g>
             </svg>
+            <span className="text-[20px] font-medium">Forms</span>
         </div>
     );
 };
