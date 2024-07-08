@@ -7,22 +7,26 @@
         "lint": "turbo lint",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "prepare": "awesome init",
-        "add:copyright": "node ./scripts/copyright"
+        "add:copyright": "node ./scripts/copyright",
+        "format:run": "yarn ts-node scripts/run-format.ts",
+        "format:check": "yarn ts-node scripts/check-format.ts"
     },
     "devDependencies": {
         "@ascen/awesome": "^1.2.0",
         "@commitlint/cli": "^19.3.0",
         "@commitlint/config-conventional": "^19.2.2",
+        "glob": "^10.4.3",
         "lint-staged": "^15.2.7",
         "prettier": "^3.2.5",
         "prettier-plugin-tailwindcss": "^0.6.5",
+        "ts-node": "^10.9.2",
         "turbo": "^2.0.4",
         "typescript": "^5.5.2"
     },
     "engines": {
         "node": ">=18"
     },
-    "packageManager": "npm@10.8.1",
+    "packageManager": "yarn@1.22.22",
     "workspaces": [
         "apps/*",
         "packages/*"

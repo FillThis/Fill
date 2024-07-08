@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2024 ascen
+ * Copyright 2023 ascen
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,4 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */ import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-export function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}
-
-export function absoluteUrl(path: string) {
-    return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;
-}
+ */

@@ -4,11 +4,11 @@
 	<rect x="0" y="40" style="fill:#1a1a1a;" width="340" height="20"/>
 	<rect x="0" y="80" style="fill:#1a1a1a;" width="340" height="20"/>
 	<rect x="0" y="160" style="fill:#1a1a1a;" width="340" height="20"/>
-	<rect x="0" y="240" style="fill:#1a1a1a;" width="80" height="20"/>
-	<rect x="0" y="240" style="fill:#1a1a1a;" width="20" height="60"/>
-	<rect x="100" y="240" style="fill:#1a1a1a;" width="240" height="20"/>
-	<rect x="100" y="200" style="fill:#1a1a1a;" width="240" height="20"/>
-	<rect x="0" y="200" style="fill:#1a1a1a;" width="80" height="20"/>
+	<rect x="260" y="240" style="fill:#1a1a1a;" width="80" height="20"/>
+	<rect x="260" y="240" style="fill:#1a1a1a;" width="20" height="60"/>
+	<rect x="0" y="240" style="fill:#1a1a1a;" width="240" height="20"/>
+	<rect x="0" y="200" style="fill:#1a1a1a;" width="240" height="20"/>
+	<rect x="260" y="200" style="fill:#1a1a1a;" width="80" height="20"/>
 	<rect x="0" y="120" style="fill:#1a1a1a;" width="340" height="20"/>
 </g>
 </svg>

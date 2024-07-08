@@ -1,4 +1,19 @@
-"use client";
+/**
+ * @license
+ * Copyright 2024 ascen
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */ "use client";
 
 import EditTextField from "@/components/dashboard/form/EditTextField";
 import EditFormName from "@/components/dashboard/form/EditFormName";
@@ -14,6 +29,7 @@ import { redirect, RedirectType } from "next/navigation";
 import FormHeader from "@/components/header/FormHeader";
 import { Textarea } from "@/components/ui/textarea";
 import { Edit2Icon } from "lucide-react";
+import FormInputType from "@/components/dashboard/form/FormInputType";
 
 interface FormValues {
     email: string;
@@ -51,21 +67,14 @@ const FormPage: React.FC = () => {
                                 />
                             );
                             break;
-                        case "select":
-                            fieldComponent = (
-                                <select
-                                    id={field.fieldName!}
-                                    className="mr-4"
-                                ></select>
-                            );
-                            break;
                         default:
                             fieldComponent = (
-                                <Input
-                                    id={field.fieldName!}
+                                <FormInputType
+                                    name={field.fieldName!}
                                     type={field.fieldType!}
                                     placeholder={field.fieldPlaceholder!}
                                     className="mr-4"
+                                    options={field.fieldOptions!}
                                 />
                             );
                             break;

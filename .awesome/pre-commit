@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/awesome.sh"
 
-npm run add:copyright
+npm run format:run
 npx lint-staged
