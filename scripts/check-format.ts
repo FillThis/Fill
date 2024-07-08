@@ -13,13 +13,15 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */ import { exec } from "child_process";
+ */
+
+import { exec } from "child_process";
 import { doLicense } from "./license";
 
 async function checkFormat() {
     const prettierPromise = new Promise<boolean>((resolve) => {
         exec(
-            'yarn prettier -c "packages/**/*.{js,ts,mjs,json}" "scripts/**/*.ts"',
+            'yarn prettier -c "scripts/**/*.ts" "apps/**/*.ts"',
             (error, stdout, stderr) => {
                 console.log(stdout);
                 console.log(stderr);
@@ -34,14 +36,14 @@ async function checkFormat() {
     const licensesUpdated = await doLicense(false);
     let exitCode = 0;
     if (licensesUpdated) {
-        console.error(
-            "License headers were changed. Make sure to run `yarn format:run`.",
+        console.log(
+            "[ALERT] License headers were changed. Make sure to run `yarn format:run`.",
         );
         exitCode = 1;
     }
     if (prettierUpdated) {
-        console.error(
-            "Formatting needs fixes. Make sure to run `yarn format:run`.",
+        console.log(
+            "[ALERT] Formatting needs fixes. Make sure to run `yarn format:run`.",
         );
         exitCode = 1;
     }

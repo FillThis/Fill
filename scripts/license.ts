@@ -13,7 +13,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */ import fs from "fs";
+ */
+
+import fs from "fs";
 import { join } from "path";
 import { globSync } from "glob";
 
@@ -23,7 +25,7 @@ const licenseHeader = fs.readFileSync(
 );
 
 const copyrightPattern = /Copyright \d{4} ascen/;
-const globPattern = "+(packages|scripts|apps)/**/*.+(ts|js|tsx|jsx)";
+const globPattern = "+(scripts|apps)/**/*.+(ts|js|tsx|jsx)";
 
 async function readFiles(paths: string[]) {
     const fileContents = paths.map((path) => fs.readFileSync(path, "utf-8"));
@@ -64,7 +66,7 @@ export async function doLicense(write: boolean): Promise<boolean> {
             if (result.match(copyrightPattern) == null) {
                 result =
                     licenseHeader.replace(
-                        "2023",
+                        String(new Date().getFullYear() - 1),
                         String(new Date().getFullYear()),
                     ) + result;
                 console.log(`Adding license to ${path}.`);
@@ -79,7 +81,8 @@ export async function doLicense(write: boolean): Promise<boolean> {
             if (contents !== result) {
                 count++;
                 if (write) {
-                    return fs.writeFileSync(path, result, "utf-8");
+                    fs.writeFileSync(path, result, "utf-8");
+                    console.log(`[INSERTED] ${path}.`);
                 }
             } else {
                 return Promise.resolve();
@@ -90,7 +93,7 @@ export async function doLicense(write: boolean): Promise<boolean> {
         console.log(`No files needed license changes.`);
         return false;
     } else {
-        console.log(`${count} files had license headers updated.`);
+        console.log(`[SUCCESS] ${count} files had license headers updated.`);
         return true;
     }
 }

@@ -7,7 +7,6 @@
         "lint": "turbo lint",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "prepare": "awesome init",
-        "add:copyright": "node ./scripts/copyright",
         "format:run": "yarn ts-node scripts/run-format.ts",
         "format:check": "yarn ts-node scripts/check-format.ts"
     },
