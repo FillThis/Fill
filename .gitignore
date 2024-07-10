@@ -6,6 +6,10 @@ node_modules
 .pnp.js
 
 # Local env files
+.contentlayer/
+/.contentlayer
+/.contentlayer/
+.contentlayer
 .env
 /.env
 .env/
