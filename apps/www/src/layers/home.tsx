@@ -50,7 +50,7 @@ const Home = () => {
                         An web based intuitive SaaS platform that takes your
                         prompt and generates customized, dynamic forms
                         instantly, enhancing data collection and user
-                        interaction."
+                        interaction.
                     </p>
                     <div className="flex w-full items-center justify-center">
                         <Button
