@@ -68,8 +68,9 @@ const EditFormDescription: React.FC = () => {
                     <DialogHeader>
                         <DialogTitle>Edit Form Description</DialogTitle>
                         <DialogDescription>
-                            Change the description of the form. Click save when
-                            you're done.
+                            {
+                                "Change the description of the form. Click save when you're done."
+                            }
                         </DialogDescription>
                     </DialogHeader>
                     <div className="w-full py-4">

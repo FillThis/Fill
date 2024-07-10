@@ -64,8 +64,9 @@ const EditFormName: React.FC = () => {
                     <DialogHeader>
                         <DialogTitle>Edit Form Name</DialogTitle>
                         <DialogDescription>
-                            Change the name of the form. Click save when you're
-                            done.
+                            {
+                                "Change the name of the form. Click save when you're done."
+                            }
                         </DialogDescription>
                     </DialogHeader>
                     <div className="w-full py-4">

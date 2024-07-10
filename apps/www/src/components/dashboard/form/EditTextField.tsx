@@ -100,8 +100,9 @@ const EditTextField = ({ index }: { index: number }) => {
                     <DialogHeader>
                         <DialogTitle>Edit field</DialogTitle>
                         <DialogDescription>
-                            Make changes in field schema content. Click save
-                            when you're done.
+                            {
+                                "Make changes in field schema content. Click save when you're done."
+                            }
                         </DialogDescription>
                     </DialogHeader>
                     <div className="w-full py-4">

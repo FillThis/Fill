@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/awesome.sh"
 
-npm run format:run
+npm run format:check
 npx lint-staged
