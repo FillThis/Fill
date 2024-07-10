@@ -39,7 +39,7 @@ export default function RootLayout({
         <html lang="en">
             <body
                 className={cn(
-                    "bg-background w-full underline-offset-4",
+                    "bg-background text-foreground flex h-full min-h-dvh w-full flex-col underline-offset-4",
                     inter.className,
                 )}
             >

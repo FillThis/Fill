@@ -24,6 +24,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Icons } from "@/components/icons/icons";
 import OrSeperator from "@/components/ui/orSeperator";
+import Logo from "@/assets/logoJsxComponent/logo";
 
 const Login = () => {
     const handleSigninWithGoogle = () => {
@@ -36,11 +37,17 @@ const Login = () => {
                 id="login-page"
                 className="m-auto flex w-[90%] max-w-md flex-col items-center gap-y-8 py-4"
             >
-                <h1 className="text-foreground mb-8 text-[2rem] font-medium tracking-tighter">
+                <Logo />
+                <h1 className="text-[2rem] font-medium leading-[1.25rem] tracking-tighter">
                     Welcome back
                 </h1>
+                <p className="text-muted-foreground text-center leading-8">
+                    Click below visible any button for log in with social media
+                    platform
+                </p>
+                <span className="bg-muted-foreground my-4 h-[1px] w-48 rounded-full"></span>
                 {/* Login Form */}
-                <div className="flex w-full flex-col items-end gap-y-8">
+                {/* <div className="flex w-full flex-col items-end gap-y-8">
                     <span className="flex w-full flex-col gap-y-4">
                         <Label htmlFor="email">Enter email</Label>
                         <Input
@@ -62,9 +69,9 @@ const Login = () => {
                     <Button type="button" className="w-full">
                         Login
                     </Button>
-                </div>
+                </div> */}
                 {/* --- or --- divider */}
-                <OrSeperator />
+                {/* <OrSeperator /> */}
                 {/* Login with Google */}
                 <Button
                     className="text-foreground flex w-full items-center justify-center gap-x-2"
@@ -73,12 +80,12 @@ const Login = () => {
                     type="button"
                 >
                     {Icons.google}
-                    Signin with Google
+                    Continue with Google
                 </Button>
                 {/* Create an account */}
-                <Link className="text-muted underline" href={"/register"}>
-                    <p>Don't have an account? Sign up</p>
-                </Link>
+                {/* <Link className="text-muted-foreground underline" href={"/register"}>
+                    <p>Don&apos;t have an account? Sign up</p>
+                </Link> */}
             </div>
         </div>
     );

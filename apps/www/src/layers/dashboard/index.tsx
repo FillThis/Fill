@@ -24,9 +24,12 @@ import React from "react";
 
 const Dashboard = () => {
     return (
-        <div className="flex h-full w-full gap-x-4 max-md:flex-col">
+        <div
+            id="dashboard_page"
+            className="flex h-full w-full flex-auto gap-y-4 max-md:flex-col"
+        >
             {/* Side menu */}
-            <aside className="bg-foreground/5 flex flex-col gap-y-4 rounded-xl p-8 md:h-full md:w-1/2 md:justify-between 2xl:w-1/4">
+            <aside className="bg-foreground/5 flex flex-col gap-y-4 rounded-xl p-8 md:min-h-full md:w-1/2 md:justify-between 2xl:w-1/4">
                 <div className="bg-foreground text-background w-full rounded-full px-4 py-2">
                     Forms
                 </div>
@@ -41,7 +44,7 @@ const Dashboard = () => {
                 </div>
             </aside>
             {/* Main section */}
-            <ScrollArea className="bg-background text-foreground w-full rounded-xl md:h-full">
+            <ScrollArea className="bg-background text-foreground w-full flex-auto rounded-xl md:min-h-full">
                 <Forms></Forms>
             </ScrollArea>
         </div>

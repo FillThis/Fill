@@ -46,7 +46,7 @@ const FormPage: React.FC = () => {
     }
 
     return (
-        <div className="m-auto my-8 flex w-full max-w-4xl flex-col gap-8">
+        <div className="m-auto my-8 flex h-full w-full max-w-3xl flex-col gap-8">
             <FormHeader
                 formName={formData.formName!}
                 formDesc={formData.formDescription!}
