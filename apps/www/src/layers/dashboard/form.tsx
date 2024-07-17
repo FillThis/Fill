@@ -21,18 +21,19 @@ import EditTextField from "@/components/dashboard/form/EditTextField";
 import EditFormName from "@/components/dashboard/form/EditFormName";
 import EditFormDescription from "@/components/dashboard/form/EditFormDescription";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import React from "react";
+import React, { useState } from "react";
 import { useAtom } from "jotai";
 import { formDataStore } from "@/store/formData.store";
 import { IFormData } from "@/types/form";
-import { redirect, RedirectType } from "next/navigation";
+import { redirect, RedirectType, useRouter } from "next/navigation";
 import FormHeader from "@/components/header/FormHeader";
 import { Textarea } from "@/components/ui/textarea";
-import { Edit2Icon } from "lucide-react";
 import FormInputType from "@/components/dashboard/form/FormInputType";
 import LinksFooter from "@/components/footer/LinksFooter";
+import FormServe, { ICreateForm } from "@fill/core/form";
+import { type AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { Loader } from "@/components/ui/loader";
 
 interface FormValues {
     email: string;
@@ -41,9 +42,33 @@ interface FormValues {
 
 const FormPage: React.FC = () => {
     const [formData] = useAtom<IFormData | null>(formDataStore);
+    const [loading, setLoading] = useState<boolean>(false);
+    const router: AppRouterInstance = useRouter();
+
     if (!formData) {
         return redirect("/dashboard");
     }
+
+    const handleCreateForm = async () => {
+        // Submit the form data
+        if (!formData) return;
+        setLoading(true);
+        const data: ICreateForm = {
+            name: formData.formName!,
+            description: formData.formDescription!,
+            fields: formData.fields.toString(),
+            user: "random",
+        };
+
+        const formServe = new FormServe();
+        let res = await formServe.createForm(data);
+        if (res.status) {
+            return router.push("/dashboard");
+        }
+        setLoading(false);
+        return;
+    };
+    console.log(formData);
 
     return (
         <div className="m-auto my-8 flex h-full w-full max-w-3xl flex-col gap-8">
@@ -75,6 +100,7 @@ const FormPage: React.FC = () => {
                                 <FormInputType
                                     name={field.fieldName!}
                                     type={field.fieldType!}
+                                    label={field.fieldLabel!}
                                     placeholder={field.fieldPlaceholder!}
                                     className="mr-4"
                                     options={field.fieldOptions!}
@@ -89,21 +115,34 @@ const FormPage: React.FC = () => {
                             className="bg-foreground/5 flex w-full items-center gap-12 rounded-xl p-4"
                         >
                             <div className="flex w-full flex-col gap-4">
-                                <Label
-                                    htmlFor={field.fieldName!}
-                                    className="mr-2"
-                                >
-                                    {field.fieldLabel}
-                                </Label>
+                                {field.fieldType !== "checkbox" ? (
+                                    <Label
+                                        htmlFor={field.fieldName!}
+                                        className="mr-2"
+                                    >
+                                        {field.fieldLabel}
+                                    </Label>
+                                ) : (
+                                    <></>
+                                )}
                                 {fieldComponent}
                             </div>
                             <EditTextField index={index} />
                         </div>
                     );
                 })}
-                <Button type="submit" className="px-8" variant={"default"}>
-                    Create form
-                </Button>
+                <span className="flex items-center">
+                    {loading && <Loader />}
+                    <Button
+                        type="submit"
+                        className="px-8"
+                        disabled={loading}
+                        variant={"default"}
+                        onClick={handleCreateForm}
+                    >
+                        Create form
+                    </Button>
+                </span>
             </form>
             <LinksFooter />
         </div>

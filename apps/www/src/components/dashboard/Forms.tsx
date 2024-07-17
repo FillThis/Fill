@@ -23,7 +23,7 @@ const Forms = () => {
     const handlNewFormCreation = () => {};
 
     return (
-        <div className="flex flex-col gap-4 p-8">
+        <div className="flex flex-col gap-4 md:p-8">
             <h1 className="text-4xl font-normal leading-8 tracking-tight">
                 Forms
             </h1>
