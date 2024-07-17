@@ -37,6 +37,7 @@ interface FormInputTypeProps {
     placeholder?: string;
     type?: HTMLInputTypeAttribute | string;
     name?: string;
+    label?: string;
     options?: FormOption[];
 }
 
@@ -44,6 +45,7 @@ const FormInputType: React.FC<FormInputTypeProps> = ({
     className,
     type,
     name,
+    label,
     placeholder,
     options,
 }) => {
@@ -96,12 +98,12 @@ const FormInputType: React.FC<FormInputTypeProps> = ({
             return (
                 <div className="flex items-center gap-x-2">
                     <Checkbox id={name} />
-                    <label
+                    <Label
                         htmlFor={name}
                         className="cursor-pointer text-base peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
-                        {placeholder}
-                    </label>
+                        {label}
+                    </Label>
                 </div>
             );
             break;

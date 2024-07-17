@@ -26,10 +26,10 @@ const Dashboard = () => {
     return (
         <div
             id="dashboard_page"
-            className="flex h-full w-full flex-auto gap-y-4 max-md:flex-col"
+            className="flex h-full w-full flex-auto gap-y-16 max-md:flex-col"
         >
             {/* Side menu */}
-            <aside className="bg-foreground/5 flex flex-col gap-y-4 rounded-xl p-8 md:min-h-full md:w-1/2 md:justify-between 2xl:w-1/4">
+            <aside className="bg-foreground/5 flex flex-col gap-y-4 rounded-xl md:min-h-full md:w-1/2 md:justify-between md:p-8 2xl:w-1/4">
                 <div className="bg-foreground text-background w-full rounded-full px-4 py-2">
                     Forms
                 </div>

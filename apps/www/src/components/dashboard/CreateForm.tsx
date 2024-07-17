@@ -94,7 +94,7 @@ const CreateForm = () => {
                         />
                     </div>
                 </div>
-                <DialogFooter className="flex flex-row items-center justify-end">
+                <DialogFooter className="flex flex-row items-center justify-end gap-x-0">
                     {loading && <Loader />}
                     <Button
                         type="submit"
