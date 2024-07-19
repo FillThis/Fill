@@ -35,6 +35,9 @@ const config = {
             },
         },
         extend: {
+            height: {
+                "with-nav": "calc(100dvh - 5rem)",
+            },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",

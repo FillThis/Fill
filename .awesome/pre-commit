@@ -2,4 +2,5 @@
 . "$(dirname -- "$0")/_/awesome.sh"
 
 npm run format:check
+npm run lint -w apps/www
 npx lint-staged

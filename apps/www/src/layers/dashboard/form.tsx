@@ -35,11 +35,6 @@ import FormServe, { ICreateForm } from "@fill/core/form";
 import { type AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { Loader } from "@/components/ui/loader";
 
-interface FormValues {
-    email: string;
-    password: string;
-}
-
 const FormPage: React.FC = () => {
     const [formData] = useAtom<IFormData | null>(formDataStore);
     const [loading, setLoading] = useState<boolean>(false);

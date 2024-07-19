@@ -22,7 +22,7 @@ const layout = (props: { children: React.ReactNode }) => {
     return (
         <>
             <Header />
-            <main className="flex h-full w-full flex-auto flex-col px-8 py-4">
+            <main className="flex h-full w-full flex-auto flex-col px-8">
                 {props.children}
             </main>
         </>
