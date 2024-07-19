@@ -24,7 +24,9 @@ import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.share
 import { useRouter } from "next/navigation";
 import LinksFooter from "@/components/footer/LinksFooter";
 import { Textarea } from "@/components/ui/textarea";
-import { ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon, ChevronUpIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
+import DecreasingSpacer from "@/components/ui/decreasing-spacer";
 
 const Home = () => {
     const [pathToNavigate, setPathToNavigate] = useState<string>("/login");
@@ -46,68 +48,97 @@ const Home = () => {
         setSubject(e.target.value);
     };
 
+    const handleSubjectOnClick: React.MouseEventHandler<
+        HTMLButtonElement
+    > = () => {
+        // TODO: if user is not logged in then navigate to login page
+        // or else go to dashboard/form with store.
+    };
+
     return (
         <>
             <main className="m-auto mb-8 flex h-full w-full flex-auto flex-col">
-                <div
+                <section
                     id="subject_action"
-                    className="h-with-nav flex flex-auto flex-col justify-center gap-y-4 md:gap-y-10"
+                    className="h-with-nav mx-auto flex w-full max-w-2xl flex-auto flex-col justify-center py-8"
                 >
-                    <h1 className="text-foreground text-4xl font-medium tracking-tighter md:text-[5rem] md:leading-[1.12]">
-                        Generate now...
-                    </h1>
-                    <p className="text-muted-foreground">
-                        Enter your purpose to generate a form into below box and
-                        generate form quickly.
-                    </p>
-                    <div className="mt-8 flex w-full flex-col items-end justify-center gap-y-0 md:flex-row">
-                        <Textarea
-                            value={subject}
-                            onChange={handleSubjectChange}
-                            autoFocus
-                            placeholder="Enter your form subject here..."
-                            className="focus:bg-foreground/5 border-foreground h-24 resize-none rounded-br-none"
-                        />
-                        <Button
-                            className="rounded-tr-none px-6"
-                            disabled={subject.length === 0}
-                        >
-                            Generate
-                            <ChevronRightIcon size={20} className="ml-1" />
-                        </Button>
+                    <div className="flex h-full flex-auto flex-col justify-center gap-y-4">
+                        <h1 className="text-foreground text-4xl font-medium tracking-tighter md:text-[4rem] md:leading-[4rem]">
+                            Generate now...
+                        </h1>
+                        <p className="text-muted-foreground leading-[1.6rem]">
+                            Enter your purpose into below box and generate form
+                            quickly.
+                        </p>
+                        <div className="mt-8 flex w-full flex-col items-end justify-center">
+                            <Textarea
+                                value={subject}
+                                onChange={handleSubjectChange}
+                                // autoFocus
+                                placeholder="Enter your form subject here..."
+                                className={cn(
+                                    "focus:bg-foreground/10 bg-foreground/5 h-24 resize-none rounded-br-none",
+                                    subject.length === 0
+                                        ? "border-foreground/50 focus-visible:border-foreground/50"
+                                        : "border-foreground focus-visible:border-foreground",
+                                )}
+                            />
+                            <Button
+                                className="rounded-tr-none px-6"
+                                disabled={subject.length === 0}
+                                onClick={handleSubjectOnClick}
+                            >
+                                Generate
+                                <ChevronRightIcon size={20} className="ml-1" />
+                            </Button>
+                        </div>
                     </div>
-                </div>
-                <div
+                    <ChevronUpIcon size={40} />
+                    <ChevronUpIcon size={40} className="opacity-50" />
+                </section>
+                <section
                     id="intro"
-                    className="flex h-dvh flex-auto flex-col items-center justify-center gap-y-8 md:gap-y-10"
+                    className="flex h-dvh flex-auto flex-col py-4"
                 >
-                    <h1 className="text-foreground text-center text-4xl font-medium tracking-tighter md:text-[5rem] md:leading-[1.12]">
-                        An ai form generator
-                    </h1>
-                    <p className="text-muted-foreground w-[90%] max-w-4xl text-center text-base font-normal leading-8">
-                        An web based intuitive SaaS platform that takes your
-                        prompt and generates customized, dynamic forms
-                        instantly, enhancing data collection and user
-                        interaction.
-                    </p>
-                    <div className="mt-8 flex w-full flex-col justify-center gap-y-4 md:flex-row">
-                        <Button
-                            variant={"default"}
-                            className="px-12 max-md:w-full md:mt-4 md:px-16"
-                        >
-                            Get started
-                        </Button>
-                        <Button
-                            variant={"link"}
-                            onClick={() => {
-                                return router.replace("/dashboard");
-                            }}
-                            className="px-12 md:mt-4 md:px-16"
-                        >
-                            Open dashboard{" "}
-                        </Button>
+                    <div className="mx-auto flex">
+                        <span className="bg-foreground mr-4 h-5 w-5 rounded-full"></span>
+                        <h2 className="text-center font-medium">
+                            What is Fill?
+                        </h2>
                     </div>
-                </div>
+
+                    <DecreasingSpacer />
+
+                    <div className="flex h-full flex-col justify-center gap-y-4 md:items-center md:gap-y-8">
+                        <h1 className="text-foreground text-[2rem] font-medium leading-[2.4rem] tracking-tighter md:text-center md:text-[4rem] md:leading-[4rem]">
+                            A quick A.I. form generator.
+                        </h1>
+                        <p className="text-muted-foreground w-full max-w-4xl text-base font-normal leading-[1.6rem] md:text-center">
+                            An web based intuitive SaaS platform that takes your
+                            prompt and generates customized, dynamic forms
+                            instantly, enhancing data collection and user
+                            interaction.
+                        </p>
+                        <div className="mt-8 flex w-full flex-col justify-center gap-y-4 md:flex-row">
+                            <Button
+                                variant={"default"}
+                                className="px-12 max-md:w-full md:mt-4 md:px-16"
+                            >
+                                Get started
+                            </Button>
+                            <Button
+                                variant={"link"}
+                                onClick={() => {
+                                    return router.replace("/dashboard");
+                                }}
+                                className="px-12 underline md:mt-4 md:px-16"
+                            >
+                                <span className="bg-foreground mr-4 h-5 w-5 rounded-full"></span>
+                                Open dashboard
+                            </Button>
+                        </div>
+                    </div>
+                </section>
                 <LinksFooter />
             </main>
         </>

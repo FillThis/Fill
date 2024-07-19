@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import { Inter } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "../styles/globals.css";
 import JotaiProvider from "@/providers/JotaiProvider";
 import AuthProvider from "@/providers/AuthProvider";
@@ -23,7 +23,7 @@ import { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const sansSerif = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Fomrs",
@@ -40,7 +40,7 @@ export default function RootLayout({
             <body
                 className={cn(
                     "bg-background text-foreground flex h-full min-h-dvh w-full flex-col underline-offset-4",
-                    inter.className,
+                    sansSerif.className,
                 )}
             >
                 <ThemeProvider attribute="class" defaultTheme="system">

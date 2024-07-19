@@ -37,9 +37,9 @@ const MobileNavBar = () => {
                 <MenuIcon className="cursor-pointer md:hidden" />
             </SheetTrigger>
 
-            <SheetContent side="left">
+            <SheetContent side="left" onClick={() => setOpen(false)}>
                 <div className="flex flex-col items-start gap-y-4">
-                    <Link href={"/"} className="mb-4">
+                    <Link href={"/"} className="mb-8">
                         {Icons.logo}
                     </Link>
                     {mobileNavItems.map((item, index) => (
@@ -49,7 +49,9 @@ const MobileNavBar = () => {
                             asChild
                             className="h-auto p-0"
                         >
-                            <Link href={item.path}>{item.name}</Link>
+                            <Link href={item.path} className="text-base">
+                                {item.name}
+                            </Link>
                         </Button>
                     ))}
                 </div>

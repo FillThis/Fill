@@ -52,7 +52,7 @@ const LinksFooter = () => {
             <Link href={"/"}>
                 <Logo className="mb-4" />
             </Link>
-            <h3 className="text-muted-foreground">Some important links</h3>
+            <h3 className="text-foreground">Some important links</h3>
             <div className="flex max-w-lg flex-wrap items-center justify-center gap-4 gap-y-2 text-blue-500">
                 {links.map((link, index) => (
                     <>
@@ -67,7 +67,7 @@ const LinksFooter = () => {
                     </>
                 ))}
             </div>
-            <p className="mt-4">
+            <p className="mt-4 text-center">
                 Copyright &copy; {new Date().getFullYear()} ascen. All right
                 reserved.
             </p>

@@ -15,18 +15,17 @@
  * limitations under the License.
  */
 
-import Header from "@/components/header/Header";
 import React from "react";
 
-const layout = (props: { children: React.ReactNode }) => {
+const DecreasingSpacer = () => {
     return (
         <>
-            <Header />
-            <main className="flex h-full w-full flex-auto flex-col px-8 max-md:bg-[radial-gradient(25%_8%_at_100%_5%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%)] md:bg-[radial-gradient(10%_10%_at_100%_10%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%)] md:px-8">
-                {props.children}
-            </main>
+            <span className="bg-foreground mx-auto mt-8 h-[4px] w-full"></span>
+            <span className="bg-foreground mx-auto mt-4 h-[3px] w-full"></span>
+            <span className="bg-foreground mx-auto mt-4 h-[2px] w-full"></span>
+            <span className="bg-foreground mx-auto mt-4 h-[1px] w-full"></span>
         </>
     );
 };
 
-export default layout;
+export default DecreasingSpacer;
