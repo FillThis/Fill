@@ -23,12 +23,13 @@ interface LogoProps {
     size?: number;
 }
 
-const Logo: React.FC<LogoProps> = ({ className, size = 32 }) => {
+const Logo: React.FC<LogoProps> = ({ className, size = 28 }) => {
     return (
         <div
             className={cn("text-foreground flex items-center gap-4", className)}
         >
             <svg
+                height={size}
                 id="Layer_1"
                 className="fill-current"
                 xmlns="http://www.w3.org/2000/svg"
