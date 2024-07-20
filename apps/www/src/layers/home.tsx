@@ -57,7 +57,7 @@ const Home = () => {
 
     return (
         <>
-            <main className="m-auto mb-8 flex h-full w-full flex-auto flex-col">
+            <main className="m-auto flex h-full w-full flex-auto flex-col">
                 <section
                     id="subject_action"
                     className="h-with-nav mx-auto flex w-full max-w-2xl flex-auto flex-col justify-center py-8"
@@ -70,21 +70,25 @@ const Home = () => {
                             Enter your purpose into below box and generate form
                             quickly.
                         </p>
-                        <div className="mt-8 flex w-full flex-col items-end justify-center">
+                        <div
+                            className={cn(
+                                "border-foreground mt-8 flex w-full flex-col items-end justify-center gap-4 rounded-none border p-4",
+                                subject.length === 0
+                                    ? "border-foreground/50 focus-visible:border-foreground/50"
+                                    : "border-foreground focus-visible:border-foreground",
+                            )}
+                        >
                             <Textarea
                                 value={subject}
                                 onChange={handleSubjectChange}
-                                // autoFocus
+                                // autoFocus={true}
                                 placeholder="Enter your form subject here..."
                                 className={cn(
-                                    "focus:bg-foreground/10 bg-foreground/5 h-24 resize-none rounded-br-none",
-                                    subject.length === 0
-                                        ? "border-foreground/50 focus-visible:border-foreground/50"
-                                        : "border-foreground focus-visible:border-foreground",
+                                    "h-24 resize-none rounded-none rounded-br-none border-none p-0 outline-none focus-visible:border-none",
                                 )}
                             />
                             <Button
-                                className="rounded-tr-none px-6"
+                                className="rounded-one px-6"
                                 disabled={subject.length === 0}
                                 onClick={handleSubjectOnClick}
                             >
@@ -100,14 +104,14 @@ const Home = () => {
                     id="intro"
                     className="flex h-dvh flex-auto flex-col py-4"
                 >
-                    <div className="mx-auto flex">
+                    <div className="mx-auto flex items-center justify-center">
                         <span className="bg-foreground mr-4 h-5 w-5 rounded-full"></span>
                         <h2 className="text-center font-medium">
                             What is Fill?
                         </h2>
                     </div>
 
-                    <DecreasingSpacer />
+                    <DecreasingSpacer className="opacity-75" />
 
                     <div className="flex h-full flex-col justify-center gap-y-4 md:items-center md:gap-y-8">
                         <h1 className="text-foreground text-[2rem] font-medium leading-[2.4rem] tracking-tighter md:text-center md:text-[4rem] md:leading-[4rem]">
@@ -139,7 +143,6 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-                <LinksFooter />
             </main>
         </>
     );
