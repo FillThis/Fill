@@ -23,21 +23,27 @@ interface LogoProps {
     size?: number;
 }
 
-const Logo: React.FC<LogoProps> = ({ className, size = 28 }) => {
+const Logo: React.FC<LogoProps> = ({ className, size = 32 }) => {
     return (
         <div
             className={cn("text-foreground flex items-center gap-4", className)}
         >
             <svg
-                height={size}
-                id="Layer_1"
                 className="fill-current"
+                height={size}
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 510 260"
+                viewBox="0 0 650 260"
             >
                 <rect
                     className="fill-current"
-                    x="410"
+                    x="450"
+                    y="120"
+                    width="80"
+                    height="20"
+                />
+                <rect
+                    className="fill-current"
+                    x="450"
                     y="120"
                     width="20"
                     height="60"
@@ -46,26 +52,40 @@ const Logo: React.FC<LogoProps> = ({ className, size = 28 }) => {
                     className="fill-current"
                     x="450"
                     y="80"
-                    width="20"
-                    height="100"
+                    width="80"
+                    height="20"
                 />
                 <rect
                     className="fill-current"
-                    x="490"
+                    x="550"
+                    y="120"
+                    width="20"
+                    height="60"
+                />
+                <rect
+                    className="fill-current"
+                    x="590"
                     y="80"
                     width="20"
                     height="100"
                 />
                 <rect
                     className="fill-current"
-                    x="410"
+                    x="630"
+                    y="80"
+                    width="20"
+                    height="100"
+                />
+                <rect
+                    className="fill-current"
+                    x="550"
                     y="80"
                     width="20"
                     height="20"
                 />
                 <polygon
                     className="fill-current"
-                    points="410 100 430 100 410 120 410 100"
+                    points="550 100 570 100 550 120 550 100"
                 />
                 <rect className="fill-current" width="390" height="20" />
                 <rect className="fill-current" y="40" width="390" height="20" />

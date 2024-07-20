@@ -50,7 +50,9 @@ const Footer = () => {
     return (
         <footer className="bg-foreground/10 flex md:justify-center">
             <div className="flex flex-col gap-8 p-8 md:px-48">
-                <Logo />
+                <Link href={"/"}>
+                    <Logo />
+                </Link>
                 <div className="flex max-w-lg flex-col gap-2">
                     <p className="font-medium">Some links</p>
                     {links.map((link, index) => (
