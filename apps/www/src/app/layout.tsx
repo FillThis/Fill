@@ -26,7 +26,7 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 const sansSerif = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Fomrs",
+    title: "Fill",
     description: "An ai form generator.",
 };
 
@@ -39,7 +39,7 @@ export default function RootLayout({
         <html lang="en">
             <body
                 className={cn(
-                    "bg-background text-foreground flex h-full min-h-dvh w-full flex-col underline-offset-4",
+                    "bg-background text-foreground box-border flex h-full min-h-dvh w-full flex-col scroll-smooth underline-offset-4",
                     sansSerif.className,
                 )}
             >

@@ -15,15 +15,36 @@
  * limitations under the License.
  */
 
+import { cn } from "@/lib/utils";
 import React from "react";
 
-const DecreasingSpacer = () => {
+const DecreasingSpacer = (props: { className?: string }) => {
     return (
         <>
-            <span className="bg-foreground mx-auto mt-8 h-[4px] w-full"></span>
-            <span className="bg-foreground mx-auto mt-4 h-[3px] w-full"></span>
-            <span className="bg-foreground mx-auto mt-4 h-[2px] w-full"></span>
-            <span className="bg-foreground mx-auto mt-4 h-[1px] w-full"></span>
+            <span
+                className={cn(
+                    "bg-foreground mx-auto mt-8 h-[4px] w-full",
+                    props.className,
+                )}
+            ></span>
+            <span
+                className={cn(
+                    "bg-foreground mx-auto mt-4 h-[3px] w-full",
+                    props.className,
+                )}
+            ></span>
+            <span
+                className={cn(
+                    "bg-foreground mx-auto mt-4 h-[2px] w-full",
+                    props.className,
+                )}
+            ></span>
+            <span
+                className={cn(
+                    "bg-foreground mx-auto mt-4 h-[1px] w-full",
+                    props.className,
+                )}
+            ></span>
         </>
     );
 };

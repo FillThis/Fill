@@ -16,8 +16,8 @@
  */
 
 import Logo from "@/assets/logoJsxComponent/logo";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
 
 const links: { path: string; title: string }[] = [
     {
@@ -46,33 +46,33 @@ const links: { path: string; title: string }[] = [
     },
 ];
 
-const LinksFooter = () => {
+const Footer = () => {
     return (
-        <section className="text-foreground flex flex-col items-center justify-center gap-4">
-            <Link href={"/"}>
-                <Logo className="mb-4" />
-            </Link>
-            <h3 className="text-foreground">Some important links</h3>
-            <div className="flex max-w-lg flex-wrap items-center justify-center gap-4 gap-y-2 text-blue-500">
-                {links.map((link, index) => (
-                    <span className="flex gap-4" key={index}>
-                        <Link
-                            className="flex-shrink-0 transition-all hover:underline"
-                            key={index}
-                            href={link.path}
-                        >
-                            {link.title}
-                        </Link>
-                        {index < links.length - 1 && <span>|</span>}
-                    </span>
-                ))}
+        <footer className="bg-foreground/10 flex md:justify-center">
+            <div className="flex flex-col gap-8 p-8 md:px-48">
+                <Logo />
+                <div className="flex max-w-lg flex-col gap-2">
+                    <p className="font-medium">Some links</p>
+                    {links.map((link, index) => (
+                        <span key={index}>
+                            <Link
+                                className="text-muted-foreground transition-all hover:underline"
+                                key={index}
+                                href={link.path}
+                            >
+                                {link.title}
+                            </Link>
+                        </span>
+                    ))}
+                </div>
+                <span className="bg-foreground h-[1px] w-12"></span>
+                <p>
+                    Copyright &copy; {new Date().getFullYear()} ascen. All right
+                    reserved.
+                </p>
             </div>
-            <p className="mt-4 text-center">
-                Copyright &copy; {new Date().getFullYear()} ascen. All right
-                reserved.
-            </p>
-        </section>
+        </footer>
     );
 };
 
-export default LinksFooter;
+export default Footer;

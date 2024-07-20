@@ -31,7 +31,7 @@ import FormHeader from "@/components/header/FormHeader";
 import { Textarea } from "@/components/ui/textarea";
 import FormInputType from "@/components/dashboard/form/FormInputType";
 import LinksFooter from "@/components/footer/LinksFooter";
-import FormServe, { ICreateForm } from "@fill/core/form";
+// import FormServe, { ICreateForm } from "@fill/core/form";
 import { type AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { Loader } from "@/components/ui/loader";
 
@@ -48,22 +48,21 @@ const FormPage: React.FC = () => {
         // Submit the form data
         if (!formData) return;
         setLoading(true);
-        const data: ICreateForm = {
-            name: formData.formName!,
-            description: formData.formDescription!,
-            fields: formData.fields.toString(),
-            user: "random",
-        };
+        // const data: ICreateForm = {
+        //     name: formData.formName!,
+        //     description: formData.formDescription!,
+        //     fields: formData.fields.toString(),
+        //     user: "random",
+        // };
 
-        const formServe = new FormServe();
-        let res = await formServe.createForm(data);
-        if (res.status) {
-            return router.push("/dashboard");
-        }
+        // const formServe = new FormServe();
+        // let res = await formServe.createForm(data);
+        // if (res.status) {
+        //     return router.push("/dashboard");
+        // }
         setLoading(false);
         return;
     };
-    console.log(formData);
 
     return (
         <div className="m-auto my-8 flex h-full w-full max-w-3xl flex-col gap-8">
