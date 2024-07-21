@@ -43,7 +43,7 @@ export default function RootLayout({
                     sansSerif.className,
                 )}
             >
-                <ThemeProvider attribute="class" defaultTheme="system">
+                <ThemeProvider attribute="class" defaultTheme="dark">
                     <AuthProvider>
                         <JotaiProvider>{children}</JotaiProvider>
                     </AuthProvider>

@@ -15,10 +15,18 @@
  * limitations under the License.
  */
 
+import Header from "@/components/header/Header";
 import React from "react";
 
 const Layout = (props: { children: React.ReactNode }) => {
-    return <main className="h-full w-full">{props.children}</main>;
+    return (
+        <>
+            <Header />
+            <main className="flex h-full w-full flex-auto flex-col px-8 py-4">
+                {props.children}
+            </main>
+        </>
+    );
 };
 
 export default Layout;

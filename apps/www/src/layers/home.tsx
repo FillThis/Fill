@@ -24,9 +24,11 @@ import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.share
 import { useRouter } from "next/navigation";
 import LinksFooter from "@/components/footer/LinksFooter";
 import { Textarea } from "@/components/ui/textarea";
-import { ChevronRightIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import {
+    KeyboardArrowUpSharp,
+    KeyboardArrowRightSharp,
+} from "@mui/icons-material";
 import DecreasingSpacer from "@/components/ui/decreasing-spacer";
 
 const Home = () => {
@@ -94,12 +96,21 @@ const Home = () => {
                                 onClick={handleSubjectOnClick}
                             >
                                 Generate
-                                <ChevronRightIcon size={20} className="ml-1" />
+                                <KeyboardArrowRightSharp
+                                    fontSize="large"
+                                    className="ml-1"
+                                />
                             </Button>
                         </div>
                     </div>
-                    <KeyboardArrowUpIcon className="m-0 p-0 text-[2.5rem]" />
-                    <KeyboardArrowUpIcon className="m-0 p-0 text-[2.5rem] opacity-50" />
+                    <KeyboardArrowUpSharp
+                        fontSize="large"
+                        className="m-0 p-0 text-[2.5rem]"
+                    />
+                    <KeyboardArrowUpSharp
+                        fontSize="large"
+                        className="m-0 p-0 text-[2.5rem] opacity-50"
+                    />
                 </section>
                 <section
                     id="intro"

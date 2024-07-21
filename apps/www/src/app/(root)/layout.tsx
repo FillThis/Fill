@@ -19,11 +19,11 @@ import Header from "@/components/header/Header";
 import React from "react";
 import Footer from "@/components/footer/Footer";
 
-const layout = (props: { children: React.ReactNode }) => {
+const Layout = (props: { children: React.ReactNode }) => {
     return (
         <>
             <Header />
-            <main className="flex h-full w-full flex-auto flex-col px-8 max-md:bg-[radial-gradient(25%_8%_at_100%_5%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%)] md:bg-[radial-gradient(10%_10%_at_100%_10%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%)] md:px-8">
+            <main className="flex h-full w-full flex-auto flex-col px-8 max-md:bg-[radial-gradient(25%_8%_at_100%_5%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%)] md:bg-[radial-gradient(10%_10%_at_100%_10%,rgba(255,255,255,0.3)_0%,rgba(255,255,255,0)_100%)]">
                 {props.children}
             </main>
             <Footer />
@@ -31,4 +31,4 @@ const layout = (props: { children: React.ReactNode }) => {
     );
 };
 
-export default layout;
+export default Layout;

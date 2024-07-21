@@ -15,18 +15,31 @@
  * limitations under the License.
  */
 
-import { MoonIcon, SunIcon } from "lucide-react";
+import { DarkModeOutlined, WbIncandescentOutlined } from "@mui/icons-material";
 import { useTheme } from "next-themes";
-import React from "react";
+import React, { useState } from "react";
 
 const ThemeSwitcher = () => {
     const { resolvedTheme, theme, setTheme } = useTheme();
+    const [themeValue, setThemeValue] = useState<string>(theme || "dark");
 
-    return resolvedTheme === "dark" ? (
-        <SunIcon onClick={() => setTheme("light")} className="text-2xl" />
-    ) : (
-        <MoonIcon onClick={() => setTheme("dark")} className="text-2xl" />
-    );
+    if (theme && theme === "light") {
+        return (
+            <DarkModeOutlined
+                onClick={() => setTheme("dark")}
+                className="text-2xl"
+            />
+        );
+    } else if (theme && theme === "dark") {
+        return (
+            <WbIncandescentOutlined
+                onClick={() => setTheme("light")}
+                className="text-2xl"
+            />
+        );
+    } else {
+        return <></>;
+    }
 };
 
 export default ThemeSwitcher;
