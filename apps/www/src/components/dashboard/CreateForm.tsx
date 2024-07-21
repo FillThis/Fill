@@ -28,7 +28,7 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
-import { PlusIcon } from "lucide-react";
+import { AddSharp as PlusIcon } from "@mui/icons-material";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader } from "@/components/ui/loader";
@@ -94,7 +94,7 @@ const CreateForm = () => {
                         />
                     </div>
                 </div>
-                <DialogFooter className="flex flex-row items-center justify-end gap-x-0">
+                <DialogFooter className="flex flex-row items-center justify-end">
                     {loading && <Loader />}
                     <Button
                         type="submit"

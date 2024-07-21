@@ -30,11 +30,17 @@ import {
     KeyboardArrowRightSharp,
 } from "@mui/icons-material";
 import DecreasingSpacer from "@/components/ui/decreasing-spacer";
+import { GenAI } from "@/lib/genAI";
+import { formDataStore } from "@/store/formData.store";
+import { useAtom } from "jotai";
+import { Loader } from "@/components/ui/loader";
 
 const Home = () => {
     const [pathToNavigate, setPathToNavigate] = useState<string>("/login");
     const [subject, setSubject] = useState<string>("");
+    const [loading, setLoading] = useState<boolean>(false);
     const router: AppRouterInstance = useRouter();
+    const [formData, setFormData] = useAtom(formDataStore);
 
     useEffect(() => {
         // let loggedin = Check if user is login or not.
@@ -53,9 +59,18 @@ const Home = () => {
 
     const handleSubjectOnClick: React.MouseEventHandler<
         HTMLButtonElement
-    > = () => {
-        // TODO: if user is not logged in then navigate to login page
-        // or else go to dashboard/form with store.
+    > = async () => {
+        if (!subject) return;
+        setLoading(true);
+
+        // Generate form using gen_ai
+        const genAI = new GenAI();
+        let res = await genAI.generateFormContent(subject.trim());
+
+        // Write in store
+        await setFormData(res);
+        setLoading(false);
+        return router.push("dashboard/form");
     };
 
     return (
@@ -90,17 +105,20 @@ const Home = () => {
                                     "h-24 resize-none rounded-none rounded-br-none border-none p-0 outline-none focus-visible:border-none",
                                 )}
                             />
-                            <Button
-                                className="rounded-one px-6"
-                                disabled={subject.length === 0}
-                                onClick={handleSubjectOnClick}
-                            >
-                                Generate
-                                <KeyboardArrowRightSharp
-                                    fontSize="large"
-                                    className="ml-1"
-                                />
-                            </Button>
+                            <div className="flex items-center justify-center">
+                                {loading && <Loader />}
+                                <Button
+                                    className="rounded-one px-6"
+                                    disabled={subject.length === 0}
+                                    onClick={handleSubjectOnClick}
+                                >
+                                    Generate
+                                    <KeyboardArrowRightSharp
+                                        fontSize="large"
+                                        className="ml-1"
+                                    />
+                                </Button>
+                            </div>
                         </div>
                     </div>
                     <KeyboardArrowUpSharp

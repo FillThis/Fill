@@ -28,7 +28,7 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
-import { Edit2Icon } from "lucide-react";
+import { EditOutlined } from "@mui/icons-material";
 import { useAtom } from "jotai";
 import { formDataStore } from "@/store/formData.store";
 import { IFormData } from "@/types/form";
@@ -93,7 +93,7 @@ const EditTextField = ({ index }: { index: number }) => {
                         className="bg-transparent"
                         size={"icon"}
                     >
-                        <Edit2Icon size={16} />
+                        <EditOutlined />
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-xl">

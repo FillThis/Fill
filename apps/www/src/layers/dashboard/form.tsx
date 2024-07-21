@@ -70,7 +70,7 @@ const FormPage: React.FC = () => {
                 formName={formData.formName!}
                 formDesc={formData.formDescription!}
             />
-            <span className="float-right flex w-full items-center justify-end gap-4">
+            <span className="float-right flex w-full items-center justify-end gap-4 max-md:flex-col max-md:items-end">
                 <EditFormName />
                 <EditFormDescription />
             </span>
