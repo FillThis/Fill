@@ -93,7 +93,7 @@ const EditTextField = ({ index }: { index: number }) => {
                         className="bg-transparent"
                         size={"icon"}
                     >
-                        <EditOutlined />
+                        <EditOutlined fontSize="small" />
                     </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-xl">
