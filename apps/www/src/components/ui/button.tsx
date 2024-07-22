@@ -38,10 +38,10 @@ const buttonVariants = cva(
                 link: "text-primary underline-offset-4 hover:underline",
             },
             size: {
-                default: "h-12 px-4",
-                sm: "h-10 px-3",
-                lg: "h-14 px-8",
-                icon: "h-12 w-12",
+                default: "h-10 px-4",
+                sm: "h-9 px-3",
+                lg: "h-12 px-8",
+                icon: "h-10 w-10",
             },
         },
         defaultVariants: {
