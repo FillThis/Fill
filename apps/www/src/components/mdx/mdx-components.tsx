@@ -94,7 +94,7 @@ const components: any = {
     ),
     p: ({ className, ...props }: ElementProps) => (
         <p
-            className={cn("leading-[1.2rem] [&:not(:first-child)]:mt-6", className)}
+            className={cn("leading-[2rem] [&:not(:first-child)]:mt-6", className)}
             {...props}
         />
     ),
