@@ -105,7 +105,7 @@ const components: any = {
         <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
     ),
     li: ({ className, ...props }: ElementProps) => (
-        <li className={cn("mt-2", className)} {...props} />
+        <li className={cn("leading-[1.6rem] mt-2", className)} {...props} />
     ),
     blockquote: ({ className, ...props }: ElementProps) => (
         <blockquote
