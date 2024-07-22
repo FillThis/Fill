@@ -32,7 +32,7 @@ const components: any = {
     h1: ({ className, ...props }: ElementProps) => (
         <h1
             className={cn(
-                "mt-2 scroll-m-20 text-4xl font-bold tracking-tight",
+                "mt-2 scroll-m-20 text-[2rem] font-medium tracking-tighter",
                 className,
             )}
             {...props}
@@ -50,7 +50,7 @@ const components: any = {
     h3: ({ className, ...props }: ElementProps) => (
         <h3
             className={cn(
-                "mt-8 scroll-m-20 text-2xl font-semibold tracking-tight",
+                "mt-8 scroll-m-20 text-2xl font-medium tracking-tight",
                 className,
             )}
             {...props}
@@ -59,7 +59,7 @@ const components: any = {
     h4: ({ className, ...props }: ElementProps) => (
         <h4
             className={cn(
-                "mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
+                "mt-8 scroll-m-20 text-xl font-medium tracking-tight",
                 className,
             )}
             {...props}
@@ -68,7 +68,7 @@ const components: any = {
     h5: ({ className, ...props }: ElementProps) => (
         <h5
             className={cn(
-                "mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
+                "mt-8 scroll-m-20 text-lg font-medium tracking-tight",
                 className,
             )}
             {...props}
@@ -77,7 +77,7 @@ const components: any = {
     h6: ({ className, ...props }: ElementProps) => (
         <h6
             className={cn(
-                "mt-8 scroll-m-20 text-base font-semibold tracking-tight",
+                "mt-8 scroll-m-20 text-base font-medium tracking-tight",
                 className,
             )}
             {...props}
@@ -94,7 +94,7 @@ const components: any = {
     ),
     p: ({ className, ...props }: ElementProps) => (
         <p
-            className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
+            className={cn("leading-[1.2rem] [&:not(:first-child)]:mt-6", className)}
             {...props}
         />
     ),
