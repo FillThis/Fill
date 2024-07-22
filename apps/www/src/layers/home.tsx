@@ -109,7 +109,7 @@ const Home = () => {
                                 {loading && <Loader />}
                                 <Button
                                     className="rounded-one px-6"
-                                    disabled={subject.length === 0}
+                                    disabled={subject.split(" ").length >= 3}
                                     onClick={handleSubjectOnClick}
                                 >
                                     Generate
