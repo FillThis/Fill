@@ -69,9 +69,10 @@ const Footer = () => {
                 </div>
                 <span className="bg-foreground h-[1px] w-12"></span>
                 <p>
-  Copyright &copy; {`${new Date().getFullYear()}-${(new Date().getFullYear() + 1).toString().slice(-2)}`} ascen. All rights reserved.
-</p>
-
+                    Copyright &copy;{" "}
+                    {`${new Date().getFullYear()}-${(new Date().getFullYear() + 1).toString().slice(-2)}`}{" "}
+                    ascen. All rights reserved.
+                </p>
             </div>
         </footer>
     );

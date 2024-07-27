@@ -25,12 +25,9 @@ import { Label } from "@/components/ui/label";
 import { Icons } from "@/components/icons/icons";
 import OrSeperator from "@/components/ui/orSeperator";
 import Logo from "@/assets/logoJsxComponent/logo";
+import { handleSigninWithGoogle } from "@/lib/actions/signIn";
 
 const Login = () => {
-    const handleSigninWithGoogle = () => {
-        // Sign in with google logic
-    };
-
     return (
         <div className="bg-background flex h-screen w-full items-center">
             <div
@@ -74,8 +71,7 @@ const Login = () => {
                 {/* <OrSeperator /> */}
                 {/* Login with Google */}
                 <Button
-                    className="text-foreground flex w-full items-center justify-center gap-x-2"
-                    variant={"secondary"}
+                    className="flex w-full items-center justify-center gap-x-2"
                     onClick={handleSigninWithGoogle}
                     type="button"
                 >

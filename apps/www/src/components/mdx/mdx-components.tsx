@@ -94,7 +94,10 @@ const components: any = {
     ),
     p: ({ className, ...props }: ElementProps) => (
         <p
-            className={cn("leading-[1.6rem] [&:not(:first-child)]:mt-6", className)}
+            className={cn(
+                "leading-[1.6rem] [&:not(:first-child)]:mt-6",
+                className,
+            )}
             {...props}
         />
     ),
@@ -105,7 +108,7 @@ const components: any = {
         <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
     ),
     li: ({ className, ...props }: ElementProps) => (
-        <li className={cn("leading-[1.6rem] mt-2", className)} {...props} />
+        <li className={cn("mt-2 leading-[1.6rem]", className)} {...props} />
     ),
     blockquote: ({ className, ...props }: ElementProps) => (
         <blockquote
