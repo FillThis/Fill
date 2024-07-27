@@ -70,14 +70,26 @@ const Login = () => {
                 {/* --- or --- divider */}
                 {/* <OrSeperator /> */}
                 {/* Login with Google */}
-                <Button
-                    className="flex w-full items-center justify-center gap-x-2"
-                    onClick={handleSigninWithGoogle}
-                    type="button"
-                >
-                    {Icons.google}
-                    Continue with Google
-                </Button>
+                <div className="grid w-full gap-8 md:grid-cols-2">
+                    <Button
+                        className="flex w-full items-center justify-center gap-x-2"
+                        onClick={handleSigninWithGoogle}
+                        variant={"secondary"}
+                        size={"lg"}
+                        type="button"
+                    >
+                        {Icons.google}
+                    </Button>
+                    <Button
+                        className="flex w-full items-center justify-center gap-x-2"
+                        onClick={handleSigninWithGoogle}
+                        variant={"secondary"}
+                        size={"lg"}
+                        type="button"
+                    >
+                        {Icons.github}
+                    </Button>
+                </div>
                 {/* Create an account */}
                 {/* <Link className="text-muted-foreground underline" href={"/register"}>
                     <p>Don&apos;t have an account? Sign up</p>
