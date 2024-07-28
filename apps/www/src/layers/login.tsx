@@ -29,7 +29,7 @@ import { handleSigninWithGoogle } from "@/lib/actions/signIn";
 
 const Login = () => {
     return (
-        <div className="bg-background flex h-screen w-full items-center">
+        <div className="bg-background flex h-dvh w-full items-center">
             <div
                 id="login-page"
                 className="m-auto flex w-[90%] max-w-md flex-col items-center gap-y-8 py-4"
