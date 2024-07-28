@@ -25,7 +25,7 @@ const licenseHeader = fs.readFileSync(
 );
 
 const copyrightPattern = /Copyright \d{4} ascen/;
-const globPattern = "+(scripts|apps)/**/*.+(ts|js|tsx|jsx)";
+const globPattern = "+(scripts|apps)/**/*.+(ts|mjs|cjs|js|tsx|jsx)";
 
 async function readFiles(paths: string[]) {
     const fileContents = paths.map((path) => fs.readFileSync(path, "utf-8"));
