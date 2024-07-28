@@ -99,7 +99,7 @@ const Home = () => {
                             <Textarea
                                 value={subject}
                                 onChange={handleSubjectChange}
-                                // autoFocus={true}
+                                autoFocus={true}
                                 placeholder="Enter your form subject here..."
                                 className={cn(
                                     "h-24 resize-none rounded-none rounded-br-none border-none p-0 outline-none focus-visible:border-none",
