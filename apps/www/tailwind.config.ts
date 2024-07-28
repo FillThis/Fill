@@ -27,6 +27,16 @@ const config = {
     ],
     prefix: "",
     theme: {
+        fontSize: {
+            base: [
+                "1rem",
+                {
+                    lineHeight: "1.6rem",
+                    // letterSpacing: "-0.01em",
+                    fontWeight: "400",
+                },
+            ],
+        },
         container: {
             center: true,
             padding: "2rem",

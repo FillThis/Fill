@@ -15,6 +15,19 @@
  * limitations under the License.
  */
 
-import { handler } from "@/lib/auth";
+const mutEnvConfig = {
+    nextAuth: {
+        secret: process.env.NEXTAUTH_SECRET,
+        url: process.env.NEXTAUTH_URL,
+    },
+    googleAuth: {
+        clientId: process.env.AUTH_GOOGLE_ID,
+        clientSecret: process.env.AUTH_GOOGLE_SECRET,
+    },
+    appUrl: process.env.NEXT_PUBLIC_APP_URL,
+    aiApiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY,
+};
 
-export { handler as GET, handler as POST };
+const envConfig: Readonly<typeof mutEnvConfig> = Object.freeze(mutEnvConfig);
+
+export default envConfig;

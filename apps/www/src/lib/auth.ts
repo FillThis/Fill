@@ -15,9 +15,18 @@
  * limitations under the License.
  */
 
-import NextAuth from "next-auth";
-import Google from "next-auth/providers/google";
+import envConfig from "@/config/env";
+import NextAuth, { NextAuthOptions } from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
-    providers: [Google],
-});
+const authOptions: NextAuthOptions = {
+    providers: [
+        GoogleProvider({
+            clientId: envConfig.googleAuth.clientId!,
+            clientSecret: envConfig.googleAuth.clientSecret!,
+        }),
+    ],
+    secret: envConfig.nextAuth.secret,
+};
+
+export const handler = NextAuth(authOptions);

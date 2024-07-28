@@ -38,7 +38,7 @@ const Login = () => {
                 <h1 className="text-[2rem] font-medium leading-[1.25rem] tracking-tighter">
                     Welcome back
                 </h1>
-                <p className="text-muted-foreground text-center leading-8">
+                <p className="text-muted-foreground text-center text-base">
                     Click below visible any button for log in with social media
                     platform
                 </p>
@@ -84,6 +84,7 @@ const Login = () => {
                         className="flex w-full items-center justify-center gap-x-2"
                         onClick={handleSigninWithGoogle}
                         variant={"secondary"}
+                        disabled
                         size={"lg"}
                         type="button"
                     >
