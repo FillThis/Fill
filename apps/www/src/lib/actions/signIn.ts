@@ -17,7 +17,7 @@
 
 "use server";
 
-import { signIn } from "@/lib/auth";
+import { signIn } from "next-auth/react";
 
 export const handleSigninWithGoogle = async () => {
     // Sign in with google logic
