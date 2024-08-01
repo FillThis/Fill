@@ -28,7 +28,7 @@ const config = {
     prefix: "",
     theme: {
         fontSize: {
-            base: [
+            "base": [
                 "1rem",
                 {
                     lineHeight: "1.6rem",
