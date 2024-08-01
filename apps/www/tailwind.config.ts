@@ -28,7 +28,6 @@ const config = {
     prefix: "",
     theme: {
         fontSize: {
-            ...fontSize,
             "base": [
                 "1rem",
                 {
