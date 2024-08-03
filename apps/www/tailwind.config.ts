@@ -27,7 +27,15 @@ const config = {
     ],
     prefix: "",
     theme: {
-        fontSize: {
+        container: {
+            center: true,
+            padding: "2rem",
+            screens: {
+                "2xl": "1400px",
+            },
+        },
+        extend: {
+fontSize: {
             "base": [
                 "1rem",
                 {
@@ -37,14 +45,6 @@ const config = {
                 },
             ],
         },
-        container: {
-            center: true,
-            padding: "2rem",
-            screens: {
-                "2xl": "1400px",
-            },
-        },
-        extend: {
             height: {
                 "with-nav": "calc(100dvh - 5rem)",
             },
